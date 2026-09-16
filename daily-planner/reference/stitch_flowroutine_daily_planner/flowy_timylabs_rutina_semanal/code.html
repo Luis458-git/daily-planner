@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "tertiary": "#56e5a9",
+          "background": "#0c1421",
+          "on-secondary-fixed-variant": "#004c69",
+          "on-primary-container": "#613b00",
+          "surface-tint": "#ffb95f",
+          "on-surface": "#dbe2f5",
+          "secondary": "#7bd0ff",
+          "on-tertiary-fixed": "#002113",
+          "surface-bright": "#323948",
+          "surface-container": "#18202d",
+          "on-primary-fixed": "#2a1700",
+          "on-secondary": "#00354a",
+          "tertiary-fixed": "#6ffbbe",
+          "primary": "#ffc174",
+          "on-tertiary": "#003824",
+          "error-container": "#93000a",
+          "on-surface-variant": "#d8c3ad",
+          "on-tertiary-container": "#004e34",
+          "tertiary-fixed-dim": "#4edea3",
+          "on-primary": "#472a00",
+          "outline-variant": "#534434",
+          "primary-fixed": "#ffddb8",
+          "on-tertiary-fixed-variant": "#005236",
+          "surface-variant": "#2d3543",
+          "surface-container-low": "#141c29",
+          "secondary-container": "#00a6e0",
+          "surface-container-highest": "#2d3543",
+          "on-error": "#690005",
+          "on-primary-fixed-variant": "#653e00",
+          "tertiary-container": "#30c88f",
+          "outline": "#a08e7a",
+          "error": "#ffb4ab",
+          "surface-container-lowest": "#070e1b",
+          "inverse-on-surface": "#29313f",
+          "surface": "#0c1421",
+          "primary-fixed-dim": "#ffb95f",
+          "primary-container": "#f59e0b",
+          "surface-container-high": "#222a38",
+          "on-secondary-fixed": "#001e2c",
+          "surface-dim": "#0c1421",
+          "on-background": "#dbe2f5",
+          "on-error-container": "#ffdad6",
+          "inverse-primary": "#855300",
+          "secondary-fixed": "#c4e7ff",
+          "inverse-surface": "#dbe2f5",
+          "secondary-fixed-dim": "#7bd0ff",
+          "on-secondary-container": "#00374d"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "gutter": "1rem",
+          "space-sm": "0.5rem",
+          "margin-desktop": "2rem",
+          "space-md": "1rem",
+          "space-lg": "1.5rem",
+          "gutter-lg": "1.5rem",
+          "margin": "1.25rem",
+          "space-xl": "2rem",
+          "space-xs": "0.25rem"
+        },
+        "fontFamily": {
+          "display-timer": [
+            "Plus Jakarta Sans"
+          ],
+          "body-sm": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "label-lg": [
+            "Inter"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "headline-md": [
+            "Plus Jakarta Sans"
+          ],
+          "title-md": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-xl": [
+            "Plus Jakarta Sans"
+          ],
+          "body-md": [
+            "Plus Jakarta Sans"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-xl-mobile": [
+            "Plus Jakarta Sans"
+          ]
+        },
+        "fontSize": {
+          "display-timer": [
+            "32px",
+            {
+              "lineHeight": "38px",
+              "fontWeight": "700"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-lg": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "fontWeight": "600"
+            }
+          ],
+          "label-lg": [
+            "13px",
+            {
+              "lineHeight": "18px",
+              "fontWeight": "600"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-md": [
+            "20px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "600"
+            }
+          ],
+          "title-md": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-xl": [
+            "36px",
+            {
+              "lineHeight": "44px",
+              "fontWeight": "700"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-sm": [
+            "10px",
+            {
+              "lineHeight": "14px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-xl-mobile": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "fontWeight": "700"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_12px_32px_-4px_rgba(0,0,0,0.5)]"><div class="flex flex-col pt-space-md"><div class="px-space-md pb-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Logotipo amigable y moderno para app de rutinas y productividad juvenil, con un rayo estilizado y un reloj de arena sonriente en gradiente violeta y menta.. Brand logo. - Primary color: #6c5ce7
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-full
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WFXIX6tpkEedTaBUWwe3FZXyXXb1kuMiuUvk4JXeEruZyGCpRVLpijBbj-RFkfA5U8z-4lv7yVRSO1yRxNVRcVu9ZITtlKMGNDVSAdWt6de5jEuCsN-zYO4sk_d3wlCaITDPwbc8Y9t1elMqzUaXCwQIpaZ5Xg-gVSuWfPrRu-5Ja2WHnbwkFh1SjxjtsC4bobcX7NbtpvJLvDGSXimMoSL9NAiUWdK_a4h2d_VIFFrilxmmEH2jxFqaM"/><div class="flex flex-col"><span class="font-title-md text-title-md text-on-surface tracking-tight leading-none">Flowy</span><span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase mt-space-xs">Timylabs v2.4</span></div></div><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-tertiary-container/20 text-tertiary font-label-sm text-label-sm"><span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>Live</span></div><nav class="flex flex-col gap-1 px-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-label-lg rounded-xl shadow-[0_0_16px_rgba(245,158,11,0.25)]"><a class="flex items-center gap-3 px-space-md py-2.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined text-xl">dashboard</span>Dashboard</a><a aria-current="page" class="flex items-center gap-3 px-space-md py-2.5 transition-all bg-primary-container text-on-primary-container font-label-lg rounded-xl shadow-[0_0_16px_rgba(245,158,11,0.25)]" data-path="events-rutinas" href="#"><span class="material-symbols-outlined text-xl">calendar_today</span>Rutina Semanal</a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="temporizador-focus" href="#"><span class="material-symbols-outlined text-xl">timer</span>Temporizador</a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="actividades-tasks" href="#"><span class="material-symbols-outlined text-xl">task_alt</span>Actividades</a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="stats-progreso" href="#"><span class="material-symbols-outlined text-xl">insights</span>Estadísticas</a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="notes" href="#"><span class="material-symbols-outlined text-xl">sticky_note_2</span>Notes</a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="settings" href="#"><span class="material-symbols-outlined text-xl">settings</span>Settings</a></nav></div><div class="p-space-md"><div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col gap-2 shadow-[0_12px_32px_-4px_rgba(0,0,0,0.5)]"><div class="flex items-center justify-between"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">military_tech</span><span class="font-label-md text-label-md text-on-surface">Bronze III</span></div><span class="font-label-sm text-label-sm text-secondary">Lvl 3</span></div><div class="w-full bg-surface-variant rounded-full h-1.5 overflow-hidden"><div class="bg-primary-container h-1.5 rounded-full" style="width: 53.06%"></div></div><div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm"><span>28h 57m / 54h</span><span class="text-primary font-label-sm text-label-sm">53.06%</span></div><div class="mt-1 pt-2 flex items-center justify-between"><div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-tertiary"></div><span class="font-label-sm text-label-sm text-on-surface">Active Scholar</span></div><span class="font-label-sm text-label-sm text-secondary uppercase">PRO</span></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-[#ef4444] opacity-80"></span><span class="w-3 h-3 rounded-full bg-[#f59e0b] opacity-80"></span><span class="w-3 h-3 rounded-full bg-[#10b981] opacity-80"></span></div><div class="flex items-center gap-2 px-space-sm py-1 rounded-full bg-surface-container-low"><span class="material-symbols-outlined text-secondary text-sm">cloud_sync</span><span class="font-label-sm text-label-sm text-on-surface-variant tracking-wide">Flowy Cloud Sync • Active Session</span></div></div><div class="flex items-center gap-space-md"><button class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"><span class="material-symbols-outlined text-lg">graphic_eq</span></button><div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-low text-secondary font-label-sm text-label-sm"><span class="material-symbols-outlined text-sm text-tertiary">bolt</span><span>92% Energy</span></div><button class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"><span class="material-symbols-outlined text-lg">notifications</span></button><div class="flex items-center gap-2 pl-space-sm"><span class="px-3 py-1 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold shadow-[0_0_16px_rgba(245,158,11,0.35)]">Timylabs PREMIUM</span><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VeAFoQKgNTOVjdQjFxEEuUpBAbuS_b7SunWgpCRLvCgzPW8x05BpC3cjZ7grAWrxIvRdSUkRcRbx9dK9PprRePxTSKaN2K8qt_ESYO4FReQdEDvMx_rFD_JLtbsXRtO9qw4RILzw3r9WCSZBlp8l56lEntYOk4x8V6L4cmW85xi8xiCveinU9eljSeYpCvlk5gKEWZBbxH3Vz5x4pw5uuDOaKcPC2ZO1WO6d4YNeLkQEmpE7qF-BpoRCMi"/></div></div></header><main class="w-full pt-16 bg-background min-h-screen px-gutter-lg"><div class="flex flex-col w-full pb-space-xl">
+<!-- Top Navigation & Controls Bar -->
+<header class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md mb-space-lg">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Events &amp; Rutinas Semanales 📅</h1>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-container/15 text-primary font-label-sm text-label-sm">Semana 43</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">Organiza tus bloques de tiempo, hábitos y materias para la semana activa</p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Week Navigation Navigator -->
+<div class="flex items-center bg-surface-container-low rounded-xl p-1 shadow-sm">
+<button aria-label="Semana Anterior" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</button>
+<span class="px-space-md font-label-md text-label-md text-on-surface select-none">Semana 43 • Octubre 2024</span>
+<button aria-label="Semana Siguiente" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</button>
+</div>
+<!-- Today Button -->
+<button class="px-3 py-1.5 rounded-xl bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-all shadow-sm">
+        Hoy
+      </button>
+<!-- View Switcher -->
+<div class="flex items-center bg-surface-container-low rounded-xl p-1 shadow-sm">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-highest text-on-surface font-label-sm text-label-sm shadow-sm transition-all">Semana</button>
+<button class="px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-all">Día</button>
+<button class="px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-all">Lista</button>
+</div>
+<!-- Add Block Primary CTA -->
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md font-bold shadow-[0_0_18px_rgba(245,158,11,0.35)] hover:brightness-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-lg">add</span>
+<span>Añadir Bloque</span>
+</button>
+</div>
+</header>
+<!-- Main 2-Column Responsive Workspace Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter-lg items-start">
+<!-- LEFT: Calendar Time Matrix (Col 8) -->
+<section class="xl:col-span-8 flex flex-col bg-surface-container-lowest rounded-xl p-space-md shadow-[0_12px_32px_-4px_rgba(0,0,0,0.5)] overflow-hidden">
+<!-- Calendar Header Days Strip -->
+<div class="grid grid-cols-[64px_repeat(7,1fr)] gap-2 pb-space-sm bg-surface-container-low/40 rounded-t-lg px-space-xs pt-space-xs">
+<div class="flex items-center justify-center font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Hora</div>
+<!-- Day Columns Header -->
+<div class="flex flex-col items-center py-1 rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">LUN</span>
+<span class="font-title-md text-title-md text-on-surface font-bold">21</span>
+</div>
+<div class="flex flex-col items-center py-1 rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">MAR</span>
+<span class="font-title-md text-title-md text-on-surface font-bold">22</span>
+</div>
+<!-- Active Current Day (Wed 23) -->
+<div class="flex flex-col items-center py-1 rounded-lg bg-surface-container-high shadow-sm">
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase">MIÉ</span>
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-sm text-label-sm font-bold shadow-[0_0_10px_rgba(245,158,11,0.4)]">23</div>
+</div>
+<div class="flex flex-col items-center py-1 rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">JUE</span>
+<span class="font-title-md text-title-md text-on-surface font-bold">24</span>
+</div>
+<div class="flex flex-col items-center py-1 rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">VIE</span>
+<span class="font-title-md text-title-md text-on-surface font-bold">25</span>
+</div>
+<div class="flex flex-col items-center py-1 rounded-lg">
+<span class="font-label-sm text-label-sm text-secondary uppercase">SÁB</span>
+<span class="font-title-md text-title-md text-on-surface-variant">26</span>
+</div>
+<div class="flex flex-col items-center py-1 rounded-lg">
+<span class="font-label-sm text-label-sm text-secondary uppercase">DOM</span>
+<span class="font-title-md text-title-md text-on-surface-variant">27</span>
+</div>
+</div>
+<!-- Time Schedule Grid Table (08:00 to 17:00) -->
+<div class="relative w-full overflow-x-auto select-none mt-2">
+<div class="min-w-[700px] flex flex-col gap-1.5">
+<!-- 08:00 AM -->
+<div class="grid grid-cols-[64px_repeat(7,1fr)] gap-2 min-h-[58px] items-stretch">
+<div class="flex items-start justify-center font-label-sm text-label-sm text-on-surface-variant pt-1">08:00</div>
+<!-- Mon: Morning HIIT -->
+<div class="bg-surface-container rounded-lg p-2 flex flex-col justify-between shadow-sm bg-gradient-to-r from-tertiary/10 to-transparent hover:bg-surface-container-high transition-all cursor-pointer">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-tertiary truncate">Cardio &amp; Run</span>
+<span class="material-symbols-outlined text-tertiary text-xs">fitness_center</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">45m</span>
+</div>
+<!-- Tue: English Audio -->
+<div class="bg-surface-container rounded-lg p-2 flex flex-col justify-between shadow-sm bg-gradient-to-r from-secondary/10 to-transparent hover:bg-surface-container-high transition-all cursor-pointer">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-secondary truncate">Grammar C1</span>
+<span class="material-symbols-outlined text-secondary text-xs">translate</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">1h</span>
+</div>
+<!-- Wed: Gym Strength -->
+<div class="bg-surface-container rounded-lg p-2 flex flex-col justify-between shadow-sm bg-gradient-to-r from-tertiary/10 to-transparent hover:bg-surface-container-high transition-all cursor-pointer">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-tertiary truncate">Gym Chest</span>
+<span class="material-symbols-outlined text-tertiary text-xs">exercise</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">50m</span>
+</div>
+<!-- Thu: Running -->
+<div class="bg-surface-container rounded-lg p-2 flex flex-col justify-between shadow-sm bg-gradient-to-r from-tertiary/10 to-transparent hover:bg-surface-container-high transition-all cursor-pointer">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-tertiary truncate">Running 5K</span>
+<span class="material-symbols-outlined text-tertiary text-xs">directions_run</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">35m</span>
+</div>
+<!-- Fri: English Drill -->
+<div class="bg-surface-container rounded-lg p-2 flex flex-col justify-between shadow-sm bg-gradient-to-r from-secondary/10 to-transparent hover:bg-surface-container-high transition-all cursor-pointer">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-secondary truncate">Vocabulary</span>
+<span class="material-symbols-outlined text-secondary text-xs">menu_book</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">45m</span>
+</div>
+<!-- Sat: Empty -->
+<div class="bg-surface-container-low/30 rounded-lg"></div>
+<!-- Sun: Long Walk -->
+<div class="bg-surface-container rounded-lg p-2 flex flex-col justify-between shadow-sm bg-gradient-to-r from-tertiary/10 to-transparent hover:bg-surface-container-high transition-all cursor-pointer">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-tertiary truncate">Nature Trek</span>
+<span class="material-symbols-outlined text-tertiary text-xs">hiking</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">1h 15m</span>
+</div>
+</div>
+<!-- 09:00 AM -->
+<div class="grid grid-cols-[64px_repeat(7,1fr)] gap-2 min-h-[58px] items-stretch">
+<div class="flex items-start justify-center font-label-sm text-label-sm text-on-surface-variant pt-1">09:00</div>
+<!-- Mon: Backend Systems -->
+<div class="bg-surface-container rounded-lg p-2 flex flex-col justify-between shadow-sm bg-gradient-to-r from-secondary-container/15 to-transparent hover:bg-surface-container-high transition-all cursor-pointer">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-secondary truncate">API Design</span>
+<span class="material-symbols-outlined text-secondary text-xs">terminal</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Golang Microservices</span>
+</div>
+<!-- Tue: Backend Architecture -->
+<div class="bg-surface-container rounded-lg p-2 flex flex-col justify-between shadow-sm bg-gradient-to-r from-secondary-container/15 to-transparent hover:bg-surface-container-high transition-all cursor-pointer">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-secondary truncate">PostgreSQL Perf</span>
+<span class="material-symbols-outlined text-secondary text-xs">database</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Index Strategy</span>
+</div>
+<!-- Wed: CURRENT ACTIVE BLOCK (En Curso) -->
+<div class="relative bg-surface-container-high rounded-lg p-2 flex flex-col justify-between shadow-[0_0_24px_rgba(245,158,11,0.3)] bg-gradient-to-br from-primary/20 via-surface-container-high to-surface-container animate-pulse cursor-pointer">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-primary truncate">Rust Async</span>
+<span class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-on-primary-container animate-ping"></span>
+                  En Curso
+                </span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mt-1">
+<span class="text-on-surface font-medium">Tokio runtime</span>
+<span class="text-primary font-bold">32m left</span>
+</div>
+</div>
+<!-- Thu: Fullstack Refactor -->
+<div class="bg-surface-container rounded-lg p-2 flex flex-col justify-between shadow-sm bg-gradient-to-r from-secondary-container/15 to-transparent hover:bg-surface-container-high transition-all cursor-pointer">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-secondary truncate">React 19 Shell</span>
+<span class="material-symbols-outlined text-secondary text-xs">code</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Component Architecture</span>
+</div>
+<!-- Fri: Algo & LeetCode -->
+<div class="bg-surface-container rounded-lg p-2 flex flex-col justify-between shadow-sm bg-gradient-to-r from-secondary-container/15 to-transparent hover:bg-surface-container-high transition-all cursor-pointer">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-secondary truncate">Algoritmos DFS</span>
+<span class="material-symbols-outlined text-secondary text-xs">account_tree</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Grafos &amp; Greedy</span>
+</div>
+<!-- Sat: Open Source -->
+<div class="bg-surface-container rounded-lg p-2 flex flex-col justify-between shadow-sm bg-gradient-to-r from-secondary-container/15 to-transparent hover:bg-surface-container-high transition-all cursor-pointer">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-secondary truncate">PR Reviews</span>
+<span class="material-symbols-outlined text-secondary text-xs">commit</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">OSS Kernel</span>
+</div>
+<!-- Sun: Empty Relax -->
+<div class="bg-surface-container-low/30 rounded-lg"></div>
+</div>
+<!-- 10:00 AM - 12:00 PM (Deep Work Multi-block) -->
+<div class="grid grid-cols-[64px_repeat(7,1fr)] gap-2 min-h-[58px] items-stretch">
+<div class="flex items-start justify-center font-label-sm text-label-sm text-on-surface-variant pt-1">11:00</div>
+<!-- Mon Deep Work -->
+<div class="bg-surface-container rounded-lg p-2 flex flex-col justify-between shadow-sm bg-gradient-to-r from-secondary-container/10 to-transparent hover:bg-surface-container-high transition-all cursor-pointer">
+<span class="font-label-sm text-label-sm font-semibold text-secondary">Distributed DB</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Consenso Raft</span>
+</div>
+<!-- Tue Deep Work -->
+<div class="bg-surface-container rounded-lg p-2 flex flex-col justify-between shadow-sm bg-gradient-to-r from-secondary-container/10 to-transparent hover:bg-surface-container-high transition-all cursor-pointer">
+<span class="font-label-sm text-label-sm font-semibold text-secondary">Distributed DB</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Replicación WAL</span>
+</div>
+<!-- Wed Deep Work Scheduled -->
+<div class="bg-surface-container rounded-lg p-2 flex flex-col justify-between shadow-sm bg-gradient-to-r from-secondary-container/10 to-transparent hover:bg-surface-container-high transition-all cursor-pointer">
+<span class="font-label-sm text-label-sm font-semibold text-secondary">WASM Engine</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Parser Compiler</span>
+</div>
+<!-- Thu Deep Work -->
+<div class="bg-surface-container rounded-lg p-2 flex flex-col justify-between shadow-sm bg-gradient-to-r from-secondary-container/10 to-transparent hover:bg-surface-container-high transition-all cursor-pointer">
+<span class="font-label-sm text-label-sm font-semibold text-secondary">WASM Engine</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Memory Sandbox</span>
+</div>
+<!-- Fri Code Review -->
+<div class="bg-surface-container rounded-lg p-2 flex flex-col justify-between shadow-sm bg-gradient-to-r from-secondary-container/10 to-transparent hover:bg-surface-container-high transition-all cursor-pointer">
+<span class="font-label-sm text-label-sm font-semibold text-secondary">Demo Sprint</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Team Retro</span>
+</div>
+<!-- Sat: Personal Project -->
+<div class="bg-surface-container rounded-lg p-2 flex flex-col justify-between shadow-sm bg-gradient-to-r from-secondary/10 to-transparent hover:bg-surface-container-high transition-all cursor-pointer">
+<span class="font-label-sm text-label-sm font-semibold text-secondary">Nocturne UI</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Side-project dev</span>
+</div>
+<!-- Sun: Audiobooks -->
+<div class="bg-surface-container rounded-lg p-2 flex flex-col justify-between shadow-sm bg-gradient-to-r from-secondary/10 to-transparent hover:bg-surface-container-high transition-all cursor-pointer">
+<span class="font-label-sm text-label-sm font-semibold text-secondary">Audiobooks</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Philosophy of Tech</span>
+</div>
+</div>
+<!-- 13:00 PM (Comida & Recarga) -->
+<div class="grid grid-cols-[64px_repeat(7,1fr)] gap-2 min-h-[50px] items-stretch">
+<div class="flex items-start justify-center font-label-sm text-label-sm text-on-surface-variant pt-1">13:00</div>
+<!-- Uniform Lunch & Recharge Slots across week -->
+<div class="col-span-7 grid grid-cols-7 gap-2">
+<div class="bg-surface-container rounded-lg p-2 flex items-center justify-between shadow-sm bg-gradient-to-r from-primary-container/10 to-transparent">
+<span class="font-label-sm text-label-sm text-primary font-medium truncate">Almuerzo</span>
+<span class="material-symbols-outlined text-primary text-xs">restaurant</span>
+</div>
+<div class="bg-surface-container rounded-lg p-2 flex items-center justify-between shadow-sm bg-gradient-to-r from-primary-container/10 to-transparent">
+<span class="font-label-sm text-label-sm text-primary font-medium truncate">Almuerzo</span>
+<span class="material-symbols-outlined text-primary text-xs">restaurant</span>
+</div>
+<div class="bg-surface-container rounded-lg p-2 flex items-center justify-between shadow-sm bg-gradient-to-r from-primary-container/10 to-transparent">
+<span class="font-label-sm text-label-sm text-primary font-medium truncate">Almuerzo</span>
+<span class="material-symbols-outlined text-primary text-xs">restaurant</span>
+</div>
+<div class="bg-surface-container rounded-lg p-2 flex items-center justify-between shadow-sm bg-gradient-to-r from-primary-container/10 to-transparent">
+<span class="font-label-sm text-label-sm text-primary font-medium truncate">Almuerzo</span>
+<span class="material-symbols-outlined text-primary text-xs">restaurant</span>
+</div>
+<div class="bg-surface-container rounded-lg p-2 flex items-center justify-between shadow-sm bg-gradient-to-r from-primary-container/10 to-transparent">
+<span class="font-label-sm text-label-sm text-primary font-medium truncate">Almuerzo</span>
+<span class="material-symbols-outlined text-primary text-xs">restaurant</span>
+</div>
+<div class="bg-surface-container rounded-lg p-2 flex items-center justify-between shadow-sm bg-gradient-to-r from-primary-container/10 to-transparent">
+<span class="font-label-sm text-label-sm text-primary font-medium truncate">Brunch</span>
+<span class="material-symbols-outlined text-primary text-xs">brunch_dining</span>
+</div>
+<div class="bg-surface-container rounded-lg p-2 flex items-center justify-between shadow-sm bg-gradient-to-r from-primary-container/10 to-transparent">
+<span class="font-label-sm text-label-sm text-primary font-medium truncate">Familiar</span>
+<span class="material-symbols-outlined text-primary text-xs">emoji_food_beverage</span>
+</div>
+</div>
+</div>
+<!-- 14:30 PM (Language & Fluency) -->
+<div class="grid grid-cols-[64px_repeat(7,1fr)] gap-2 min-h-[58px] items-stretch">
+<div class="flex items-start justify-center font-label-sm text-label-sm text-on-surface-variant pt-1">14:30</div>
+<!-- Mon English -->
+<div class="bg-surface-container rounded-lg p-2 flex flex-col justify-between shadow-sm bg-gradient-to-r from-secondary/10 to-transparent hover:bg-surface-container-high transition-all cursor-pointer">
+<span class="font-label-sm text-label-sm font-semibold text-secondary truncate">Podcast Shadowing</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">45m Listening</span>
+</div>
+<!-- Tue Empty -->
+<div class="bg-surface-container-low/30 rounded-lg"></div>
+<!-- Wed English Fluency -->
+<div class="bg-surface-container rounded-lg p-2 flex flex-col justify-between shadow-sm bg-gradient-to-r from-secondary/10 to-transparent hover:bg-surface-container-high transition-all cursor-pointer">
+<span class="font-label-sm text-label-sm font-semibold text-secondary truncate">Speaking 1on1</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tutor Nativo</span>
+</div>
+<!-- Thu Empty -->
+<div class="bg-surface-container-low/30 rounded-lg"></div>
+<!-- Fri English Fluency -->
+<div class="bg-surface-container rounded-lg p-2 flex flex-col justify-between shadow-sm bg-gradient-to-r from-secondary/10 to-transparent hover:bg-surface-container-high transition-all cursor-pointer">
+<span class="font-label-sm text-label-sm font-semibold text-secondary truncate">IELTS Essays</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Writing Task 2</span>
+</div>
+<!-- Sat: Coffee & Read -->
+<div class="bg-surface-container rounded-lg p-2 flex flex-col justify-between shadow-sm bg-gradient-to-r from-tertiary/10 to-transparent hover:bg-surface-container-high transition-all cursor-pointer">
+<span class="font-label-sm text-label-sm font-semibold text-tertiary truncate">Coffee &amp; Book</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sci-Fi Novel</span>
+</div>
+<!-- Sun: Weekly Planning -->
+<div class="bg-surface-container rounded-lg p-2 flex flex-col justify-between shadow-sm bg-gradient-to-r from-primary/10 to-transparent hover:bg-surface-container-high transition-all cursor-pointer">
+<span class="font-label-sm text-label-sm font-semibold text-primary truncate">Sync Semanal</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Metas Sem 44</span>
+</div>
+</div>
+<!-- 16:00 PM (Sport / Evening Cooldown) -->
+<div class="grid grid-cols-[64px_repeat(7,1fr)] gap-2 min-h-[58px] items-stretch">
+<div class="flex items-start justify-center font-label-sm text-label-sm text-on-surface-variant pt-1">16:00</div>
+<!-- Mon Recovery -->
+<div class="bg-surface-container rounded-lg p-2 flex flex-col justify-between shadow-sm bg-gradient-to-r from-tertiary/10 to-transparent hover:bg-surface-container-high transition-all cursor-pointer">
+<span class="font-label-sm text-label-sm font-semibold text-tertiary truncate">Movilidad &amp; Foam</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">30m</span>
+</div>
+<!-- Tue Tennis -->
+<div class="bg-surface-container rounded-lg p-2 flex flex-col justify-between shadow-sm bg-gradient-to-r from-tertiary/10 to-transparent hover:bg-surface-container-high transition-all cursor-pointer">
+<span class="font-label-sm text-label-sm font-semibold text-tertiary truncate">Tenis / Pádel</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">1h 30m</span>
+</div>
+<!-- Wed Calisthenics -->
+<div class="bg-surface-container rounded-lg p-2 flex flex-col justify-between shadow-sm bg-gradient-to-r from-tertiary/10 to-transparent hover:bg-surface-container-high transition-all cursor-pointer">
+<span class="font-label-sm text-label-sm font-semibold text-tertiary truncate">Calistenia Core</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">45m</span>
+</div>
+<!-- Thu Yoga -->
+<div class="bg-surface-container rounded-lg p-2 flex flex-col justify-between shadow-sm bg-gradient-to-r from-tertiary/10 to-transparent hover:bg-surface-container-high transition-all cursor-pointer">
+<span class="font-label-sm text-label-sm font-semibold text-tertiary truncate">Vinyasa Flow</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">40m</span>
+</div>
+<!-- Fri Swim -->
+<div class="bg-surface-container rounded-lg p-2 flex flex-col justify-between shadow-sm bg-gradient-to-r from-tertiary/10 to-transparent hover:bg-surface-container-high transition-all cursor-pointer">
+<span class="font-label-sm text-label-sm font-semibold text-tertiary truncate">Natación Libre</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">50m laps</span>
+</div>
+<!-- Sat: Open -->
+<div class="bg-surface-container-low/30 rounded-lg"></div>
+<!-- Sun: Chill Walk -->
+<div class="bg-surface-container rounded-lg p-2 flex flex-col justify-between shadow-sm bg-gradient-to-r from-primary-container/10 to-transparent hover:bg-surface-container-high transition-all cursor-pointer">
+<span class="font-label-sm text-label-sm font-semibold text-primary truncate">Matcha Walk</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">30m</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Legend Bar footer -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-md mt-space-md bg-surface-container-low/50 rounded-xl px-space-md py-space-sm">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Programación</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Inglés C1</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ejercicio / Sport</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Comida &amp; Recarga</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">schedule</span>
+<span class="font-label-sm text-label-sm text-on-surface">39.5 Horas Programadas</span>
+</div>
+</div>
+</section>
+<!-- RIGHT: Intelligence & Telemetry Sidebar (Col 4) -->
+<aside class="xl:col-span-4 flex flex-col gap-space-md">
+<!-- Widget 1: Focus Overview & Weekly Radial Goal -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-[0_12px_32px_-4px_rgba(0,0,0,0.5)] flex flex-col">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">donut_large</span>
+<h2 class="font-title-md text-title-md text-on-surface">Focus Overview</h2>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm">Semana 43</span>
+</div>
+<!-- Metric Ring + Stat Cards -->
+<div class="flex items-center justify-between gap-space-md my-space-sm">
+<!-- Circular Progress Tube Ring (82%) -->
+<div class="relative w-32 h-32 flex items-center justify-center shrink-0">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 100 100">
+<!-- Background track ring -->
+<circle class="text-surface-variant/40" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-width="8"></circle>
+<!-- Progress ring 82% (Circumference ~251.2, offset ~45) -->
+<circle class="text-primary-container" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="45.2" stroke-linecap="round" stroke-width="8" style="filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.45));"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface leading-none">82%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mt-1">Goal</span>
+</div>
+</div>
+<!-- Weekly Hours Counter stats -->
+<div class="flex flex-col gap-space-sm flex-1">
+<div class="bg-surface-container-low rounded-xl p-2.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Completado</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-md text-headline-md text-tertiary font-bold">26.0h</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">/ 39.5h</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-2.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Ritmo Óptimo</span>
+<div class="flex items-center gap-1.5 mt-0.5 text-secondary font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>+3.2h vs anterior</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Elegant Category Progress Bars Breakdown -->
+<div class="flex flex-col gap-2.5 mt-space-sm pt-space-sm bg-surface-container-low/30 rounded-lg p-space-sm">
+<!-- Programación -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface flex items-center gap-1.5 font-medium">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+                Programación Dev
+              </span>
+<span class="text-secondary-container font-semibold">16.5h</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary-container h-1.5 rounded-full" style="width: 78%"></div>
+</div>
+</div>
+<!-- Ejercicio -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface flex items-center gap-1.5 font-medium">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                Ejercicio &amp; Sport
+              </span>
+<span class="text-tertiary font-semibold">5.0h</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-tertiary h-1.5 rounded-full" style="width: 90%"></div>
+</div>
+</div>
+<!-- Inglés -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface flex items-center gap-1.5 font-medium">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                Inglés C1 Fluency
+              </span>
+<span class="text-secondary font-semibold">3.5h</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full" style="width: 70%"></div>
+</div>
+</div>
+<!-- Comida & Recarga -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface flex items-center gap-1.5 font-medium">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                Comida &amp; Descanso
+              </span>
+<span class="text-primary font-semibold">4.0h</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-1.5 rounded-full" style="width: 60%"></div>
+</div>
+</div>
+<!-- Lectura & Expansión -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface flex items-center gap-1.5 font-medium">
+<span class="w-2 h-2 rounded-full bg-surface-tint"></span>
+                Lectura &amp; Expansión
+              </span>
+<span class="text-surface-tint font-semibold">2.0h</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-surface-tint h-1.5 rounded-full" style="width: 45%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Widget 2: Plantillas Rápidas (Quick Templates) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-[0_12px_32px_-4px_rgba(0,0,0,0.5)] flex flex-col">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-xl">bolt</span>
+<h2 class="font-title-md text-title-md text-on-surface">Plantillas Rápidas</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Arrastra o clic</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Template 1: Pomodoro Dev -->
+<button class="bg-surface-container-low hover:bg-surface-container-high p-3 rounded-xl flex flex-col items-start text-left shadow-sm group transition-all">
+<div class="w-7 h-7 rounded-lg bg-secondary-container/20 text-secondary flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-sm">laptop_mac</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate w-full">Pomodoro Dev</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">50m + 10m rest</span>
+</button>
+<!-- Template 2: Cardio HIIT -->
+<button class="bg-surface-container-low hover:bg-surface-container-high p-3 rounded-xl flex flex-col items-start text-left shadow-sm group transition-all">
+<div class="w-7 h-7 rounded-lg bg-tertiary-container/20 text-tertiary flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-sm">directions_run</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate w-full">Cardio HIIT</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">45m alta intens.</span>
+</button>
+<!-- Template 3: Matcha Walk -->
+<button class="bg-surface-container-low hover:bg-surface-container-high p-3 rounded-xl flex flex-col items-start text-left shadow-sm group transition-all">
+<div class="w-7 h-7 rounded-lg bg-primary/20 text-primary flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-sm">nordic_walking</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate w-full">Matcha Walk</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">30m recarga sol</span>
+</button>
+<!-- Template 4: Listening C1 -->
+<button class="bg-surface-container-low hover:bg-surface-container-high p-3 rounded-xl flex flex-col items-start text-left shadow-sm group transition-all">
+<div class="w-7 h-7 rounded-lg bg-secondary/20 text-secondary flex items-center justify-center mb-2 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-sm">headphones</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate w-full">Listening C1</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">40m shadowing</span>
+</button>
+</div>
+</div>
+<!-- Widget 3: Live Session Pill & Cloud Sync Telemetry -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-[0_12px_32px_-4px_rgba(0,0,0,0.5)] flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-tertiary animate-pulse"></div>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Cloud Sync Offline-Ready</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container/20 text-tertiary font-label-sm text-label-sm">Ultra-Low Latency</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Los bloques de tiempo se sincronizan instantáneamente con tu calendario CalDAV y tus sesiones de Flowy Timer en segundo plano.
+        </p>
+<!-- Status Details Micro Rail -->
+<div class="flex items-center justify-between pt-2 border-t-0 bg-surface-container-low/40 rounded-lg px-space-sm py-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">cloud_done</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Último sync: hace 12s</span>
+</div>
+<button class="font-label-sm text-label-sm text-primary hover:underline font-semibold">Forzar Sync</button>
+</div>
+</div>
+</aside>
+</div>
+</div></main></div></body></html>

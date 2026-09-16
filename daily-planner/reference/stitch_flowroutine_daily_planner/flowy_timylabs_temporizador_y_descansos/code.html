@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "tertiary": "#56e5a9",
+          "background": "#0c1421",
+          "on-secondary-fixed-variant": "#004c69",
+          "on-primary-container": "#613b00",
+          "surface-tint": "#ffb95f",
+          "on-surface": "#dbe2f5",
+          "secondary": "#7bd0ff",
+          "on-tertiary-fixed": "#002113",
+          "surface-bright": "#323948",
+          "surface-container": "#18202d",
+          "on-primary-fixed": "#2a1700",
+          "on-secondary": "#00354a",
+          "tertiary-fixed": "#6ffbbe",
+          "primary": "#ffc174",
+          "on-tertiary": "#003824",
+          "error-container": "#93000a",
+          "on-surface-variant": "#d8c3ad",
+          "on-tertiary-container": "#004e34",
+          "tertiary-fixed-dim": "#4edea3",
+          "on-primary": "#472a00",
+          "outline-variant": "#534434",
+          "primary-fixed": "#ffddb8",
+          "on-tertiary-fixed-variant": "#005236",
+          "surface-variant": "#2d3543",
+          "surface-container-low": "#141c29",
+          "secondary-container": "#00a6e0",
+          "surface-container-highest": "#2d3543",
+          "on-error": "#690005",
+          "on-primary-fixed-variant": "#653e00",
+          "tertiary-container": "#30c88f",
+          "outline": "#a08e7a",
+          "error": "#ffb4ab",
+          "surface-container-lowest": "#070e1b",
+          "inverse-on-surface": "#29313f",
+          "surface": "#0c1421",
+          "primary-fixed-dim": "#ffb95f",
+          "primary-container": "#f59e0b",
+          "surface-container-high": "#222a38",
+          "on-secondary-fixed": "#001e2c",
+          "surface-dim": "#0c1421",
+          "on-background": "#dbe2f5",
+          "on-error-container": "#ffdad6",
+          "inverse-primary": "#855300",
+          "secondary-fixed": "#c4e7ff",
+          "inverse-surface": "#dbe2f5",
+          "secondary-fixed-dim": "#7bd0ff",
+          "on-secondary-container": "#00374d"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "gutter": "1rem",
+          "space-sm": "0.5rem",
+          "margin-desktop": "2rem",
+          "space-md": "1rem",
+          "space-lg": "1.5rem",
+          "gutter-lg": "1.5rem",
+          "margin": "1.25rem",
+          "space-xl": "2rem",
+          "space-xs": "0.25rem"
+        },
+        "fontFamily": {
+          "display-timer": [
+            "Plus Jakarta Sans"
+          ],
+          "body-sm": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "label-lg": [
+            "Inter"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "headline-md": [
+            "Plus Jakarta Sans"
+          ],
+          "title-md": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-xl": [
+            "Plus Jakarta Sans"
+          ],
+          "body-md": [
+            "Plus Jakarta Sans"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-xl-mobile": [
+            "Plus Jakarta Sans"
+          ]
+        },
+        "fontSize": {
+          "display-timer": [
+            "32px",
+            {
+              "lineHeight": "38px",
+              "fontWeight": "700"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-lg": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "fontWeight": "600"
+            }
+          ],
+          "label-lg": [
+            "13px",
+            {
+              "lineHeight": "18px",
+              "fontWeight": "600"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-md": [
+            "20px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "600"
+            }
+          ],
+          "title-md": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-xl": [
+            "36px",
+            {
+              "lineHeight": "44px",
+              "fontWeight": "700"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-sm": [
+            "10px",
+            {
+              "lineHeight": "14px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-xl-mobile": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "fontWeight": "700"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_12px_32px_-4px_rgba(0,0,0,0.5)]"><div class="flex flex-col pt-space-md"><div class="px-space-md pb-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Logotipo amigable y moderno para app de rutinas y productividad juvenil, con un rayo estilizado y un reloj de arena sonriente en gradiente violeta y menta.. Brand logo. - Primary color: #6c5ce7
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-full
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WFXIX6tpkEedTaBUWwe3FZXyXXb1kuMiuUvk4JXeEruZyGCpRVLpijBbj-RFkfA5U8z-4lv7yVRSO1yRxNVRcVu9ZITtlKMGNDVSAdWt6de5jEuCsN-zYO4sk_d3wlCaITDPwbc8Y9t1elMqzUaXCwQIpaZ5Xg-gVSuWfPrRu-5Ja2WHnbwkFh1SjxjtsC4bobcX7NbtpvJLvDGSXimMoSL9NAiUWdK_a4h2d_VIFFrilxmmEH2jxFqaM"/><div class="flex flex-col"><span class="font-title-md text-title-md text-on-surface tracking-tight leading-none">Flowy</span><span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase mt-space-xs">Timylabs v2.4</span></div></div><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-tertiary-container/20 text-tertiary font-label-sm text-label-sm"><span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>Live</span></div><nav class="flex flex-col gap-1 px-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-label-lg rounded-xl shadow-[0_0_16px_rgba(245,158,11,0.25)]"><a class="flex items-center gap-3 px-space-md py-2.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined text-xl">dashboard</span>Dashboard</a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="events-rutinas" href="#"><span class="material-symbols-outlined text-xl">calendar_today</span>Rutina Semanal</a><a aria-current="page" class="flex items-center gap-3 px-space-md py-2.5 transition-all bg-primary-container text-on-primary-container font-label-lg rounded-xl shadow-[0_0_16px_rgba(245,158,11,0.25)]" data-path="temporizador-focus" href="#"><span class="material-symbols-outlined text-xl">timer</span>Temporizador</a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="actividades-tasks" href="#"><span class="material-symbols-outlined text-xl">task_alt</span>Actividades</a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="stats-progreso" href="#"><span class="material-symbols-outlined text-xl">insights</span>Estadísticas</a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="notes" href="#"><span class="material-symbols-outlined text-xl">sticky_note_2</span>Notes</a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="settings" href="#"><span class="material-symbols-outlined text-xl">settings</span>Settings</a></nav></div><div class="p-space-md"><div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col gap-2 shadow-[0_12px_32px_-4px_rgba(0,0,0,0.5)]"><div class="flex items-center justify-between"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">military_tech</span><span class="font-label-md text-label-md text-on-surface">Bronze III</span></div><span class="font-label-sm text-label-sm text-secondary">Lvl 3</span></div><div class="w-full bg-surface-variant rounded-full h-1.5 overflow-hidden"><div class="bg-primary-container h-1.5 rounded-full" style="width: 53.06%"></div></div><div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm"><span>28h 57m / 54h</span><span class="text-primary font-label-sm text-label-sm">53.06%</span></div><div class="mt-1 pt-2 flex items-center justify-between"><div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-tertiary"></div><span class="font-label-sm text-label-sm text-on-surface">Active Scholar</span></div><span class="font-label-sm text-label-sm text-secondary uppercase">PRO</span></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-[#ef4444] opacity-80"></span><span class="w-3 h-3 rounded-full bg-[#f59e0b] opacity-80"></span><span class="w-3 h-3 rounded-full bg-[#10b981] opacity-80"></span></div><div class="flex items-center gap-2 px-space-sm py-1 rounded-full bg-surface-container-low"><span class="material-symbols-outlined text-secondary text-sm">cloud_sync</span><span class="font-label-sm text-label-sm text-on-surface-variant tracking-wide">Flowy Cloud Sync • Active Session</span></div></div><div class="flex items-center gap-space-md"><button class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"><span class="material-symbols-outlined text-lg">graphic_eq</span></button><div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-low text-secondary font-label-sm text-label-sm"><span class="material-symbols-outlined text-sm text-tertiary">bolt</span><span>92% Energy</span></div><button class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"><span class="material-symbols-outlined text-lg">notifications</span></button><div class="flex items-center gap-2 pl-space-sm"><span class="px-3 py-1 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold shadow-[0_0_16px_rgba(245,158,11,0.35)]">Timylabs PREMIUM</span><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VeAFoQKgNTOVjdQjFxEEuUpBAbuS_b7SunWgpCRLvCgzPW8x05BpC3cjZ7grAWrxIvRdSUkRcRbx9dK9PprRePxTSKaN2K8qt_ESYO4FReQdEDvMx_rFD_JLtbsXRtO9qw4RILzw3r9WCSZBlp8l56lEntYOk4x8V6L4cmW85xi8xiCveinU9eljSeYpCvlk5gKEWZBbxH3Vz5x4pw5uuDOaKcPC2ZO1WO6d4YNeLkQEmpE7qF-BpoRCMi"/></div></div></header><main class="w-full pt-16 bg-background min-h-screen px-gutter-lg"><div class="flex flex-col w-full pb-space-xl">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md py-space-lg">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+          Fase Beta • Protocolo Nocturne
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-tertiary-container/20 text-tertiary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">bolt</span>
+          Ritmo Ultracelular 92%
+        </span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight mt-space-xs">
+        Zona de Hiperenfoque &amp; Temporizador ⏱️
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+        Mantén el ritmo sin distracciones con descansos ergonómicos y atmósfera binaural activa.
+      </p>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="flex items-center gap-2 px-space-md py-2 rounded-full bg-surface-container-high text-on-surface hover:bg-surface-variant transition-all duration-200 shadow-md" id="zenBtn" onclick="toggleZenMode()">
+<span class="material-symbols-outlined text-secondary text-lg">fullscreen</span>
+<span class="font-label-md text-label-md">Modo Zen</span>
+</button>
+<div class="px-space-md py-2 rounded-full bg-surface-container-low text-on-surface-variant font-label-md text-label-md flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Sala Privada 04</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-start">
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-xl relative overflow-hidden flex flex-col items-center">
+<div class="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-primary-container/10 blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-20 -right-20 w-80 h-80 rounded-full bg-secondary/10 blur-3xl pointer-events-none"></div>
+<div class="w-full flex items-center justify-center p-1 bg-surface-container-lowest rounded-full max-w-lg mb-space-lg">
+<button class="mode-tab flex-1 py-1.5 px-3 rounded-full text-center font-label-sm text-label-sm transition-all bg-primary-container text-on-primary-container font-bold shadow-[0_0_12px_rgba(245,158,11,0.25)]" onclick="setMode(this, 1500)">
+            Pomodoro 25m
+          </button>
+<button class="mode-tab flex-1 py-1.5 px-3 rounded-full text-center font-label-sm text-label-sm transition-all text-on-surface-variant hover:text-on-surface" onclick="setMode(this, 2700)">
+            Concentración 45m
+          </button>
+<button class="mode-tab flex-1 py-1.5 px-3 rounded-full text-center font-label-sm text-label-sm transition-all text-on-surface-variant hover:text-on-surface" onclick="setMode(this, 3600)">
+            Épica 60m
+          </button>
+<button class="mode-tab flex-1 py-1.5 px-3 rounded-full text-center font-label-sm text-label-sm transition-all text-on-surface-variant hover:text-on-surface" onclick="setMode(this, 0)">
+            Libre
+          </button>
+</div>
+<div class="relative flex items-center justify-center my-space-sm">
+<svg class="w-72 h-72 md:w-80 md:h-80 -rotate-90 transform" viewbox="0 0 256 256">
+<circle class="text-surface-container-high" cx="128" cy="128" fill="none" r="110" stroke="currentColor" stroke-width="10"></circle>
+<circle class="text-primary" cx="128" cy="128" fill="none" id="timerProgress" r="110" stroke="currentColor" stroke-dasharray="691.15" stroke-dashoffset="180" stroke-linecap="round" stroke-width="10" style="filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.45)); transition: stroke-dashoffset 0.8s ease;"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm mb-1 tracking-wider uppercase">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+              Enfoque Profundo
+            </span>
+<span class="font-headline-xl text-[54px] md:text-[62px] leading-none font-bold text-on-surface tracking-tight drop-shadow-md" id="timeDisplay">
+              24 : 06
+            </span>
+<div class="mt-2 flex items-center gap-2 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-base text-primary">terminal</span>
+<span>Programación Frontend (Bloque 2 de 4)</span>
+</div>
+<div class="mt-1 flex gap-1 items-center">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-space-md mt-space-md w-full">
+<button class="flex items-center gap-2 px-space-xl py-3 rounded-full bg-primary-container text-on-primary-container font-title-md text-title-md font-bold shadow-[0_0_20px_rgba(245,158,11,0.4)] hover:brightness-110 active:scale-95 transition-all" id="toggleBtn" onclick="togglePlay()">
+<span class="material-symbols-outlined text-2xl font-bold" id="toggleIcon">pause</span>
+<span id="toggleText">Pausar Bloque</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-3 rounded-full bg-surface-container-high text-on-surface font-label-lg text-label-lg hover:bg-surface-variant transition-all" onclick="addFiveMin()">
+<span class="material-symbols-outlined text-lg text-secondary">more_time</span>
+<span>+5 min</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-3 rounded-full bg-surface-container-high text-error font-label-lg text-label-lg hover:bg-error-container/30 transition-all" onclick="endBlock()">
+<span class="material-symbols-outlined text-lg">stop</span>
+<span>Finalizar Bloque</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xl">graphic_eq</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-title-md text-title-md text-on-surface">Atmósfera Sonora</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Audio binaural y paisajes acústicos generativos</span>
+</div>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-lowest px-3 py-1.5 rounded-full">
+<span class="material-symbols-outlined text-sm text-tertiary">tune</span>
+<span class="font-label-sm text-label-sm text-on-surface">432Hz Sintonizado</span>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm">
+<button class="sound-card group flex flex-col p-space-sm rounded-xl bg-surface-container text-left transition-all hover:bg-surface-container-high shadow-md" onclick="selectSound(this, 'Lofi Chill')">
+<div class="flex items-center justify-between mb-2">
+<span class="material-symbols-outlined text-primary text-xl">headphones</span>
+<span class="sound-indicator w-2 h-2 rounded-full bg-primary animate-ping"></span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Lo-fi Beats</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sintetizador 70bpm</span>
+</button>
+<button class="sound-card group flex flex-col p-space-sm rounded-xl bg-surface-container-lowest text-left transition-all hover:bg-surface-container-high" onclick="selectSound(this, 'Lluvia Suave')">
+<div class="flex items-center justify-between mb-2">
+<span class="material-symbols-outlined text-secondary text-xl">water_drop</span>
+<span class="sound-indicator w-2 h-2 rounded-full bg-transparent"></span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Lluvia Suave</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Bosque Templado</span>
+</button>
+<button class="sound-card group flex flex-col p-space-sm rounded-xl bg-surface-container-lowest text-left transition-all hover:bg-surface-container-high" onclick="selectSound(this, 'Café de Tokio')">
+<div class="flex items-center justify-between mb-2">
+<span class="material-symbols-outlined text-on-surface-variant text-xl">local_cafe</span>
+<span class="sound-indicator w-2 h-2 rounded-full bg-transparent"></span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Café de Tokio</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Murmullo &amp; Granos</span>
+</button>
+<button class="sound-card group flex flex-col p-space-sm rounded-xl bg-surface-container-lowest text-left transition-all hover:bg-surface-container-high" onclick="selectSound(this, 'Ruido Blanco')">
+<div class="flex items-center justify-between mb-2">
+<span class="material-symbols-outlined text-on-surface-variant text-xl">waves</span>
+<span class="sound-indicator w-2 h-2 rounded-full bg-transparent"></span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Ruido Blanco</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Bloqueo Acústico</span>
+</button>
+</div>
+<div class="flex items-center gap-space-md bg-surface-container-lowest p-space-md rounded-xl">
+<span class="material-symbols-outlined text-on-surface-variant">volume_down</span>
+<div class="relative flex-1 flex items-center">
+<input class="w-full h-1.5 bg-surface-container-high rounded-full appearance-none cursor-pointer accent-primary" id="soundSlider" max="100" min="0" oninput="updateVolume(this.value)" type="range" value="65"/>
+</div>
+<span class="material-symbols-outlined text-on-surface">volume_up</span>
+<span class="font-label-sm text-label-sm text-primary w-8 text-right font-mono" id="volLabel">65%</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-xl flex flex-col gap-space-md">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-container/20 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl">visibility</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-title-md text-title-md text-on-surface">Asistente de Bienestar</h2>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Regla Ergonómica 20-20-20</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-tertiary font-label-sm text-label-sm">
+            Activo
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Cada 20 minutos de pantalla intensa, mira un punto a 6 metros (20 pies) de distancia durante al menos 20 segundos para relajar el músculo ciliar ocular.
+        </p>
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Próxima pausa visual en</span>
+<span class="text-secondary font-bold font-mono">08m 14s</span>
+</div>
+<div class="w-full bg-surface-container-lowest rounded-full h-2 overflow-hidden">
+<div class="bg-secondary h-2 rounded-full transition-all duration-500 shadow-[0_0_8px_rgba(123,208,255,0.4)]" style="width: 58.8%"></div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-space-sm">
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col gap-1 text-center items-center">
+<span class="material-symbols-outlined text-primary text-2xl">self_improvement</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">3</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Pausas Hechas</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col gap-1 text-center items-center">
+<span class="material-symbols-outlined text-tertiary text-2xl">spa</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">25m</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Relax Logrado</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col gap-1 text-center items-center">
+<span class="material-symbols-outlined text-secondary text-2xl">battery_charging_full</span>
+<span class="font-headline-md text-headline-md font-bold text-secondary">84%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Batería Mental</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h2 class="font-title-md text-title-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-lg">smart_toy</span>
+            Pausas Guiadas Rápidas
+          </h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Auto-calibración</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<button class="flex items-center justify-between p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-all text-left group" onclick="startBreathModal()">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-tertiary-container/20 text-tertiary flex items-center justify-center group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-lg">air</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Respiración Caja (Box Breathing)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Inhala 4s • Retén 4s • Exhala 4s • Retén 4s</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">play_circle</span>
+</button>
+<button class="flex items-center justify-between p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-all text-left group" onclick="startStretchModal()">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-secondary-container/20 text-secondary flex items-center justify-center group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-lg">fitness_center</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Descompresión de Cuello &amp; Hombros</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">3 micro-estiramientos somáticos guiados</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-secondary transition-colors">play_circle</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-xl relative overflow-hidden flex flex-col gap-space-sm">
+<div class="absolute right-0 top-0 translate-x-4 -translate-y-4 w-28 h-28 rounded-full bg-primary/10 blur-2xl pointer-events-none"></div>
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-sm">shield_with_heart</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Protocolo Dopamina Limpia</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+          En tus pausas breves, evita revisar redes sociales o mensajería de gratificación instantánea. Deja descansar tus receptores dopaminérgicos: bebe 250ml de agua fresca, mira por la ventana y mantén la mente en silencio.
+        </p>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5 text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">water_drop</span>
+<span>Meta de agua: 1.25L / 2.0L</span>
+</div>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface hover:bg-surface-variant font-label-sm text-label-sm transition-all" onclick="logWater()">
+            +250ml hidratación
+          </button>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed inset-0 z-50 bg-surface-container-lowest/80 backdrop-blur-md hidden items-center justify-center p-space-md" id="quickModal">
+<div class="bg-surface-container-low p-space-lg rounded-xl max-w-sm w-full shadow-2xl flex flex-col gap-space-md relative">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" id="modalIcon">air</span>
+<h3 class="font-title-md text-title-md text-on-surface" id="modalTitle">Pausa Guiada</h3>
+</div>
+<button class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface" onclick="closeModal()">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant" id="modalBody">
+        Prepárate para un ciclo de relajación neurofisiológica de 1 minuto.
+      </p>
+<div class="w-full bg-surface-container-lowest h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-2 rounded-full w-0 transition-all duration-1000" id="modalBar"></div>
+</div>
+<button class="w-full py-2 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md font-bold shadow-md" onclick="closeModal()">
+        Completado
+      </button>
+</div>
+</div>
+</div>
+<script>
+  let timerSeconds = 1446;
+  let isRunning = true;
+  let intervalRef = null;
+
+  function updateDisplay() {
+    const min = Math.floor(timerSeconds / 60);
+    const sec = timerSeconds % 60;
+    const padMin = String(min).padStart(2, '0');
+    const padSec = String(sec).padStart(2, '0');
+    const display = document.getElementById('timeDisplay');
+    if (display) display.textContent = `${padMin} : ${padSec}`;
+
+    const circle = document.getElementById('timerProgress');
+    if (circle) {
+      const total = 1500;
+      const progress = Math.max(0, Math.min(1, timerSeconds / total));
+      const offset = 691.15 * (1 - progress);
+      circle.style.strokeDashoffset = offset;
+    }
+  }
+
+  function startTimer() {
+    if (intervalRef) clearInterval(intervalRef);
+    intervalRef = setInterval(() => {
+      if (isRunning && timerSeconds > 0) {
+        timerSeconds--;
+        updateDisplay();
+      }
+    }, 1000);
+  }
+
+  function togglePlay() {
+    isRunning = !isRunning;
+    const btn = document.getElementById('toggleBtn');
+    const icon = document.getElementById('toggleIcon');
+    const txt = document.getElementById('toggleText');
+
+    if (isRunning) {
+      icon.textContent = 'pause';
+      txt.textContent = 'Pausar Bloque';
+      btn.className = "flex items-center gap-2 px-space-xl py-3 rounded-full bg-primary-container text-on-primary-container font-title-md text-title-md font-bold shadow-[0_0_20px_rgba(245,158,11,0.4)] hover:brightness-110 active:scale-95 transition-all";
+    } else {
+      icon.textContent = 'play_arrow';
+      txt.textContent = 'Reanudar Bloque';
+      btn.className = "flex items-center gap-2 px-space-xl py-3 rounded-full bg-tertiary-container text-on-tertiary font-title-md text-title-md font-bold shadow-[0_0_20px_rgba(86,229,169,0.3)] hover:brightness-110 active:scale-95 transition-all";
+    }
+  }
+
+  function addFiveMin() {
+    timerSeconds += 300;
+    updateDisplay();
+  }
+
+  function endBlock() {
+    timerSeconds = 0;
+    isRunning = false;
+    updateDisplay();
+    togglePlay();
+  }
+
+  function setMode(element, seconds) {
+    document.querySelectorAll('.mode-tab').forEach(tab => {
+      tab.className = "mode-tab flex-1 py-1.5 px-3 rounded-full text-center font-label-sm text-label-sm transition-all text-on-surface-variant hover:text-on-surface";
+    });
+    element.className = "mode-tab flex-1 py-1.5 px-3 rounded-full text-center font-label-sm text-label-sm transition-all bg-primary-container text-on-primary-container font-bold shadow-[0_0_12px_rgba(245,158,11,0.25)]";
+    timerSeconds = seconds === 0 ? 0 : seconds;
+    updateDisplay();
+  }
+
+  function selectSound(btn, name) {
+    document.querySelectorAll('.sound-card').forEach(card => {
+      card.className = "sound-card group flex flex-col p-space-sm rounded-xl bg-surface-container-lowest text-left transition-all hover:bg-surface-container-high";
+      const ind = card.querySelector('.sound-indicator');
+      if (ind) {
+        ind.className = "sound-indicator w-2 h-2 rounded-full bg-transparent";
+      }
+    });
+    btn.className = "sound-card group flex flex-col p-space-sm rounded-xl bg-surface-container text-left transition-all hover:bg-surface-container-high shadow-md";
+    const curInd = btn.querySelector('.sound-indicator');
+    if (curInd) {
+      curInd.className = "sound-indicator w-2 h-2 rounded-full bg-primary animate-ping";
+    }
+  }
+
+  function updateVolume(val) {
+    document.getElementById('volLabel').textContent = `${val}%`;
+  }
+
+  function toggleZenMode() {
+    const btn = document.getElementById('zenBtn');
+    const isZen = document.body.classList.toggle('zen-mode-active');
+    if (isZen) {
+      btn.classList.add('bg-primary', 'text-on-primary');
+    } else {
+      btn.classList.remove('bg-primary', 'text-on-primary');
+    }
+  }
+
+  function startBreathModal() {
+    const modal = document.getElementById('quickModal');
+    document.getElementById('modalTitle').textContent = 'Respiración de Caja (4x4)';
+    document.getElementById('modalBody').textContent = 'Siéntate derecho. Inhala despacio en 4 segundos, mantén el aire 4 segundos, exhala suave en 4 segundos y quédate vacío 4 segundos.';
+    document.getElementById('modalIcon').textContent = 'air';
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    const bar = document.getElementById('modalBar');
+    bar.style.width = '0%';
+    setTimeout(() => { bar.style.width = '100%'; }, 100);
+  }
+
+  function startStretchModal() {
+    const modal = document.getElementById('quickModal');
+    document.getElementById('modalTitle').textContent = 'Descompresión Cervical';
+    document.getElementById('modalBody').textContent = 'Gira suavemente el mentón hacia la clavícula derecha durante 15s. Repite en lado izquierdo y rueda hombros suavemente hacia atrás.';
+    document.getElementById('modalIcon').textContent = 'fitness_center';
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    const bar = document.getElementById('modalBar');
+    bar.style.width = '0%';
+    setTimeout(() => { bar.style.width = '100%'; }, 100);
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('quickModal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  }
+
+  function logWater() {
+    alert('¡Bien hecho! Has registrado 250ml de agua en tu protocolo de hidratación cognitiva.');
+  }
+
+  startTimer();
+</script></main></div></body></html>

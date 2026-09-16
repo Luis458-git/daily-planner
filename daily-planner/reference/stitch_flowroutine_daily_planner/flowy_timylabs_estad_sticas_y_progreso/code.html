@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "tertiary": "#56e5a9",
+          "background": "#0c1421",
+          "on-secondary-fixed-variant": "#004c69",
+          "on-primary-container": "#613b00",
+          "surface-tint": "#ffb95f",
+          "on-surface": "#dbe2f5",
+          "secondary": "#7bd0ff",
+          "on-tertiary-fixed": "#002113",
+          "surface-bright": "#323948",
+          "surface-container": "#18202d",
+          "on-primary-fixed": "#2a1700",
+          "on-secondary": "#00354a",
+          "tertiary-fixed": "#6ffbbe",
+          "primary": "#ffc174",
+          "on-tertiary": "#003824",
+          "error-container": "#93000a",
+          "on-surface-variant": "#d8c3ad",
+          "on-tertiary-container": "#004e34",
+          "tertiary-fixed-dim": "#4edea3",
+          "on-primary": "#472a00",
+          "outline-variant": "#534434",
+          "primary-fixed": "#ffddb8",
+          "on-tertiary-fixed-variant": "#005236",
+          "surface-variant": "#2d3543",
+          "surface-container-low": "#141c29",
+          "secondary-container": "#00a6e0",
+          "surface-container-highest": "#2d3543",
+          "on-error": "#690005",
+          "on-primary-fixed-variant": "#653e00",
+          "tertiary-container": "#30c88f",
+          "outline": "#a08e7a",
+          "error": "#ffb4ab",
+          "surface-container-lowest": "#070e1b",
+          "inverse-on-surface": "#29313f",
+          "surface": "#0c1421",
+          "primary-fixed-dim": "#ffb95f",
+          "primary-container": "#f59e0b",
+          "surface-container-high": "#222a38",
+          "on-secondary-fixed": "#001e2c",
+          "surface-dim": "#0c1421",
+          "on-background": "#dbe2f5",
+          "on-error-container": "#ffdad6",
+          "inverse-primary": "#855300",
+          "secondary-fixed": "#c4e7ff",
+          "inverse-surface": "#dbe2f5",
+          "secondary-fixed-dim": "#7bd0ff",
+          "on-secondary-container": "#00374d"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "gutter": "1rem",
+          "space-sm": "0.5rem",
+          "margin-desktop": "2rem",
+          "space-md": "1rem",
+          "space-lg": "1.5rem",
+          "gutter-lg": "1.5rem",
+          "margin": "1.25rem",
+          "space-xl": "2rem",
+          "space-xs": "0.25rem"
+        },
+        "fontFamily": {
+          "display-timer": [
+            "Plus Jakarta Sans"
+          ],
+          "body-sm": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "label-lg": [
+            "Inter"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "headline-md": [
+            "Plus Jakarta Sans"
+          ],
+          "title-md": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-xl": [
+            "Plus Jakarta Sans"
+          ],
+          "body-md": [
+            "Plus Jakarta Sans"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-xl-mobile": [
+            "Plus Jakarta Sans"
+          ]
+        },
+        "fontSize": {
+          "display-timer": [
+            "32px",
+            {
+              "lineHeight": "38px",
+              "fontWeight": "700"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-lg": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "fontWeight": "600"
+            }
+          ],
+          "label-lg": [
+            "13px",
+            {
+              "lineHeight": "18px",
+              "fontWeight": "600"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-md": [
+            "20px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "600"
+            }
+          ],
+          "title-md": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-xl": [
+            "36px",
+            {
+              "lineHeight": "44px",
+              "fontWeight": "700"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-sm": [
+            "10px",
+            {
+              "lineHeight": "14px",
+              "fontWeight": "600"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-xl-mobile": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "fontWeight": "700"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_12px_32px_-4px_rgba(0,0,0,0.5)]"><div class="flex flex-col pt-space-md"><div class="px-space-md pb-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Logotipo amigable y moderno para app de rutinas y productividad juvenil, con un rayo estilizado y un reloj de arena sonriente en gradiente violeta y menta.. Brand logo. - Primary color: #6c5ce7
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-full
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WFXIX6tpkEedTaBUWwe3FZXyXXb1kuMiuUvk4JXeEruZyGCpRVLpijBbj-RFkfA5U8z-4lv7yVRSO1yRxNVRcVu9ZITtlKMGNDVSAdWt6de5jEuCsN-zYO4sk_d3wlCaITDPwbc8Y9t1elMqzUaXCwQIpaZ5Xg-gVSuWfPrRu-5Ja2WHnbwkFh1SjxjtsC4bobcX7NbtpvJLvDGSXimMoSL9NAiUWdK_a4h2d_VIFFrilxmmEH2jxFqaM"/><div class="flex flex-col"><span class="font-title-md text-title-md text-on-surface tracking-tight leading-none">Flowy</span><span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase mt-space-xs">Timylabs v2.4</span></div></div><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-tertiary-container/20 text-tertiary font-label-sm text-label-sm"><span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>Live</span></div><nav class="flex flex-col gap-1 px-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-label-lg rounded-xl shadow-[0_0_16px_rgba(245,158,11,0.25)]"><a class="flex items-center gap-3 px-space-md py-2.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined text-xl">dashboard</span>Dashboard</a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="events-rutinas" href="#"><span class="material-symbols-outlined text-xl">calendar_today</span>Rutina Semanal</a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="temporizador-focus" href="#"><span class="material-symbols-outlined text-xl">timer</span>Temporizador</a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="actividades-tasks" href="#"><span class="material-symbols-outlined text-xl">task_alt</span>Actividades</a><a aria-current="page" class="flex items-center gap-3 px-space-md py-2.5 transition-all bg-primary-container text-on-primary-container font-label-lg rounded-xl shadow-[0_0_16px_rgba(245,158,11,0.25)]" data-path="stats-progreso" href="#"><span class="material-symbols-outlined text-xl">insights</span>Estadísticas</a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="notes" href="#"><span class="material-symbols-outlined text-xl">sticky_note_2</span>Notes</a><a class="flex items-center gap-3 px-space-md py-2.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="settings" href="#"><span class="material-symbols-outlined text-xl">settings</span>Settings</a></nav></div><div class="p-space-md"><div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col gap-2 shadow-[0_12px_32px_-4px_rgba(0,0,0,0.5)]"><div class="flex items-center justify-between"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">military_tech</span><span class="font-label-md text-label-md text-on-surface">Bronze III</span></div><span class="font-label-sm text-label-sm text-secondary">Lvl 3</span></div><div class="w-full bg-surface-variant rounded-full h-1.5 overflow-hidden"><div class="bg-primary-container h-1.5 rounded-full" style="width: 53.06%"></div></div><div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm"><span>28h 57m / 54h</span><span class="text-primary font-label-sm text-label-sm">53.06%</span></div><div class="mt-1 pt-2 flex items-center justify-between"><div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-tertiary"></div><span class="font-label-sm text-label-sm text-on-surface">Active Scholar</span></div><span class="font-label-sm text-label-sm text-secondary uppercase">PRO</span></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-[#ef4444] opacity-80"></span><span class="w-3 h-3 rounded-full bg-[#f59e0b] opacity-80"></span><span class="w-3 h-3 rounded-full bg-[#10b981] opacity-80"></span></div><div class="flex items-center gap-2 px-space-sm py-1 rounded-full bg-surface-container-low"><span class="material-symbols-outlined text-secondary text-sm">cloud_sync</span><span class="font-label-sm text-label-sm text-on-surface-variant tracking-wide">Flowy Cloud Sync • Active Session</span></div></div><div class="flex items-center gap-space-md"><button class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"><span class="material-symbols-outlined text-lg">graphic_eq</span></button><div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-low text-secondary font-label-sm text-label-sm"><span class="material-symbols-outlined text-sm text-tertiary">bolt</span><span>92% Energy</span></div><button class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all"><span class="material-symbols-outlined text-lg">notifications</span></button><div class="flex items-center gap-2 pl-space-sm"><span class="px-3 py-1 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold shadow-[0_0_16px_rgba(245,158,11,0.35)]">Timylabs PREMIUM</span><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VeAFoQKgNTOVjdQjFxEEuUpBAbuS_b7SunWgpCRLvCgzPW8x05BpC3cjZ7grAWrxIvRdSUkRcRbx9dK9PprRePxTSKaN2K8qt_ESYO4FReQdEDvMx_rFD_JLtbsXRtO9qw4RILzw3r9WCSZBlp8l56lEntYOk4x8V6L4cmW85xi8xiCveinU9eljSeYpCvlk5gKEWZBbxH3Vz5x4pw5uuDOaKcPC2ZO1WO6d4YNeLkQEmpE7qF-BpoRCMi"/></div></div></header><main class="w-full pt-16 bg-background min-h-screen px-gutter-lg"><div class="flex flex-col w-full pb-margin-desktop space-y-gutter-lg">
+<!-- Header Bar with Segmented Switcher & Export -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md pt-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Rendimiento &amp; Ritmo 📊</h1>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-primary-container/15 text-primary font-label-sm text-label-sm">Semana 17</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Analítica de productividad, balance de foco y sincronización de datos</p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="flex items-center p-1 rounded-xl bg-surface-container-lowest shadow-sm">
+<button class="tab-btn active px-3.5 py-1.5 rounded-lg font-label-md text-label-md bg-primary-container text-on-primary-container font-semibold transition-all shadow-md" type="button">Semanal</button>
+<button class="tab-btn px-3.5 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" type="button">Mensual</button>
+<button class="tab-btn px-3.5 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" type="button">Trimestral</button>
+</div>
+<button class="flex items-center gap-2 px-space-md py-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-all shadow-sm" onclick="window.print()" type="button">
+<span class="material-symbols-outlined text-lg text-secondary">print</span>
+<span>Exportar Informe</span>
+</button>
+</div>
+</div>
+<!-- KPI Row: 4 Elevated Glass Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-gutter">
+<!-- KPI 1: Cumplimiento Global -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container/70 backdrop-blur-xl shadow-md relative overflow-hidden group hover:bg-surface-container-high/80 transition-all">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xl">verified</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Cumplimiento Global</span>
+</div>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary">
+<span class="material-symbols-outlined text-sm">trending_up</span>+4%
+        </span>
+</div>
+<div class="flex items-center justify-between mt-space-md">
+<div>
+<div class="font-display-timer text-display-timer text-on-surface font-bold tracking-tight">82%</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Meta 80% superada</p>
+</div>
+<!-- Donut Mini Ring -->
+<div class="relative w-14 h-14 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 48 48">
+<circle class="text-surface-variant opacity-40" cx="24" cy="24" fill="none" r="19" stroke="currentColor" stroke-width="4.5"></circle>
+<circle class="text-primary" cx="24" cy="24" fill="none" r="19" stroke="currentColor" stroke-dasharray="119.38" stroke-dashoffset="21.48" stroke-linecap="round" stroke-width="4.5"></circle>
+</svg>
+<span class="material-symbols-outlined absolute text-sm text-primary">flag</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-lowest rounded-full h-1.5 mt-space-md overflow-hidden">
+<div class="bg-primary h-1.5 rounded-full transition-all duration-700" style="width: 82%"></div>
+</div>
+</div>
+<!-- KPI 2: Foco Semanal Acumulado -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container/70 backdrop-blur-xl shadow-md relative overflow-hidden group hover:bg-surface-container-high/80 transition-all">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-secondary/15 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-xl">timelapse</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Foco Acumulado</span>
+</div>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary">
+<span class="material-symbols-outlined text-sm">north_east</span>+14%
+        </span>
+</div>
+<div class="mt-space-md">
+<div class="font-display-timer text-display-timer text-on-surface font-bold tracking-tight">34h 40m</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">+4h 12m vs semana previa</p>
+</div>
+<div class="flex items-center justify-between pt-space-md font-label-sm text-label-sm text-on-surface-variant">
+<span>Ritmo Promedio:</span>
+<span class="text-secondary font-semibold">4h 57m / día</span>
+</div>
+</div>
+<!-- KPI 3: Racha Consecutiva -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container/70 backdrop-blur-xl shadow-md relative overflow-hidden group hover:bg-surface-container-high/80 transition-all">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xl">local_fire_department</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Racha de Hábito</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold shadow-sm">
+          ¡Imparable!
+        </span>
+</div>
+<div class="mt-space-md">
+<div class="font-display-timer text-display-timer text-primary font-bold tracking-tight">5 Días</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Consecutivos en umbral óptimo</p>
+</div>
+<!-- Golden mini timeline (L-M-X-J-V-S-D) -->
+<div class="flex items-center justify-between mt-space-md pt-1">
+<div class="flex flex-col items-center gap-1">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-bold flex items-center justify-center shadow-sm">L</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-bold flex items-center justify-center shadow-sm">M</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-bold flex items-center justify-center shadow-sm">X</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-bold flex items-center justify-center shadow-sm">J</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-bold flex items-center justify-center shadow-sm">V</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+</div>
+<div class="flex flex-col items-center gap-1 opacity-40">
+<span class="w-6 h-6 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center">S</span>
+<span class="w-1.5 h-1.5 rounded-full bg-surface-variant"></span>
+</div>
+<div class="flex flex-col items-center gap-1 opacity-40">
+<span class="w-6 h-6 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center">D</span>
+<span class="w-1.5 h-1.5 rounded-full bg-surface-variant"></span>
+</div>
+</div>
+</div>
+<!-- KPI 4: Descanso & Bienestar -->
+<div class="flex flex-col justify-between p-space-lg rounded-xl bg-surface-container/70 backdrop-blur-xl shadow-md relative overflow-hidden group hover:bg-surface-container-high/80 transition-all">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-tertiary-container/25 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-xl">self_improvement</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Descanso &amp; Bienestar</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container/20 text-tertiary font-label-sm text-label-sm">
+          100% Flow
+        </span>
+</div>
+<div class="mt-space-md">
+<div class="font-display-timer text-display-timer text-tertiary font-bold tracking-tight">Excelente</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">4 pausas activas promedio / día</p>
+</div>
+<div class="flex items-center justify-between pt-space-md font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Fatiga ocular prevenida:</span>
+<span class="text-tertiary font-semibold">28 micropausas</span>
+</div>
+</div>
+</div>
+<!-- Main Analytics Grid: Weekly Balance Chart & Focus Area Breakdown -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-stretch">
+<!-- Left: Bar Chart 'Balance Semanal de Ritmo' (7 cols) -->
+<div class="lg:col-span-7 flex flex-col justify-between p-space-lg rounded-xl bg-surface-container/70 backdrop-blur-xl shadow-md relative">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-md">
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+            Balance Semanal de Ritmo
+            <span class="material-symbols-outlined text-primary text-base">equalizer</span>
+</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Comparativa diaria: Horas de Foco Profundo vs Pausas Activas</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span>Foco</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span>Pausas</span>
+</div>
+</div>
+</div>
+<!-- SVG Dark Mode Custom Bar Chart with Hover Tooltip -->
+<div class="relative w-full h-72 flex flex-col justify-end pt-8 pb-2">
+<!-- Floating Tooltip on Wednesday (Peak Day) -->
+<div class="absolute top-2 left-[39%] -translate-x-1/2 z-20 px-3 py-1.5 rounded-lg bg-surface-container-highest shadow-xl flex flex-col items-center pointer-events-none">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-primary font-bold">
+<span class="material-symbols-outlined text-xs">hotel_class</span>
+<span>Día Pico: 6h 15m</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium">1h 10m descanso</span>
+<div class="w-2 h-2 bg-surface-container-highest rotate-45 -mb-2 mt-0.5"></div>
+</div>
+<!-- Y-axis reference gridlines -->
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-20 pb-8">
+<div class="w-full flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant w-6">7h</span>
+<div class="w-full h-px bg-on-surface"></div>
+</div>
+<div class="w-full flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant w-6">5h</span>
+<div class="w-full h-px bg-on-surface"></div>
+</div>
+<div class="w-full flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant w-6">3h</span>
+<div class="w-full h-px bg-on-surface"></div>
+</div>
+<div class="w-full flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant w-6">1h</span>
+<div class="w-full h-px bg-on-surface"></div>
+</div>
+</div>
+<!-- Bars Container (Mon - Sun) -->
+<div class="relative z-10 grid grid-cols-7 gap-2 sm:gap-4 h-56 pl-8 items-end">
+<!-- Mon: 5h foco, 0.8h pausas -->
+<div class="flex flex-col items-center h-full justify-end group">
+<div class="flex items-end gap-1 w-full justify-center h-full">
+<div class="w-3 sm:w-4.5 bg-primary/90 hover:bg-primary rounded-t-md transition-all group-hover:scale-y-105" style="height: 68%;"></div>
+<div class="w-3 sm:w-4.5 bg-secondary/80 hover:bg-secondary rounded-t-md transition-all group-hover:scale-y-105" style="height: 24%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2 group-hover:text-on-surface">Lun</span>
+</div>
+<!-- Tue: 5.5h foco, 1h pausas -->
+<div class="flex flex-col items-center h-full justify-end group">
+<div class="flex items-end gap-1 w-full justify-center h-full">
+<div class="w-3 sm:w-4.5 bg-primary/90 hover:bg-primary rounded-t-md transition-all group-hover:scale-y-105" style="height: 76%;"></div>
+<div class="w-3 sm:w-4.5 bg-secondary/80 hover:bg-secondary rounded-t-md transition-all group-hover:scale-y-105" style="height: 28%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2 group-hover:text-on-surface">Mar</span>
+</div>
+<!-- Wed (Peak): 6.25h foco, 1.2h pausas -->
+<div class="flex flex-col items-center h-full justify-end group relative">
+<div class="flex items-end gap-1 w-full justify-center h-full">
+<div class="w-3 sm:w-4.5 bg-primary rounded-t-md shadow-md transition-all group-hover:brightness-110" style="height: 92%;"></div>
+<div class="w-3 sm:w-4.5 bg-secondary rounded-t-md shadow-md transition-all group-hover:brightness-110" style="height: 35%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold mt-2">Mié</span>
+</div>
+<!-- Thu: 5h foco, 0.9h pausas -->
+<div class="flex flex-col items-center h-full justify-end group">
+<div class="flex items-end gap-1 w-full justify-center h-full">
+<div class="w-3 sm:w-4.5 bg-primary/90 hover:bg-primary rounded-t-md transition-all group-hover:scale-y-105" style="height: 72%;"></div>
+<div class="w-3 sm:w-4.5 bg-secondary/80 hover:bg-secondary rounded-t-md transition-all group-hover:scale-y-105" style="height: 25%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2 group-hover:text-on-surface">Jue</span>
+</div>
+<!-- Fri: 5.5h foco, 0.9h pausas -->
+<div class="flex flex-col items-center h-full justify-end group">
+<div class="flex items-end gap-1 w-full justify-center h-full">
+<div class="w-3 sm:w-4.5 bg-primary/90 hover:bg-primary rounded-t-md transition-all group-hover:scale-y-105" style="height: 80%;"></div>
+<div class="w-3 sm:w-4.5 bg-secondary/80 hover:bg-secondary rounded-t-md transition-all group-hover:scale-y-105" style="height: 26%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2 group-hover:text-on-surface">Vie</span>
+</div>
+<!-- Sat: 4h foco, 1.4h pausas -->
+<div class="flex flex-col items-center h-full justify-end group">
+<div class="flex items-end gap-1 w-full justify-center h-full">
+<div class="w-3 sm:w-4.5 bg-primary/60 hover:bg-primary rounded-t-md transition-all group-hover:scale-y-105" style="height: 52%;"></div>
+<div class="w-3 sm:w-4.5 bg-secondary/80 hover:bg-secondary rounded-t-md transition-all group-hover:scale-y-105" style="height: 38%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2 group-hover:text-on-surface">Sáb</span>
+</div>
+<!-- Sun: 3h foco, 1h pausas -->
+<div class="flex flex-col items-center h-full justify-end group">
+<div class="flex items-end gap-1 w-full justify-center h-full">
+<div class="w-3 sm:w-4.5 bg-primary/40 hover:bg-primary rounded-t-md transition-all group-hover:scale-y-105" style="height: 38%;"></div>
+<div class="w-3 sm:w-4.5 bg-secondary/60 hover:bg-secondary rounded-t-md transition-all group-hover:scale-y-105" style="height: 28%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2 group-hover:text-on-surface">Dom</span>
+</div>
+</div>
+</div>
+<!-- Quick Metrics Footer Bar -->
+<div class="flex flex-wrap items-center justify-between gap-2 pt-space-md mt-space-sm bg-surface-container-lowest/60 p-space-sm rounded-xl">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">bolt</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Eficiencia promedio del ciclo:</span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">87.4%</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-base">verified</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Consistencia semanal:</span>
+<span class="font-label-sm text-label-sm text-tertiary font-bold">Nivel Oro</span>
+</div>
+</div>
+</div>
+<!-- Right: 'Distribución de Foco' Areas Breakdown (5 cols) -->
+<div class="lg:col-span-5 flex flex-col justify-between p-space-lg rounded-xl bg-surface-container/70 backdrop-blur-xl shadow-md">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+            Distribución de Foco
+            <span class="material-symbols-outlined text-secondary text-base">donut_small</span>
+</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">34h 40m organizadas por categoría</p>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary">5 Áreas</span>
+</div>
+<!-- Stacked Visual Bar Tracker -->
+<div class="w-full flex h-3 rounded-full overflow-hidden my-space-md shadow-inner bg-surface-container-lowest">
+<div class="bg-primary hover:brightness-110 transition-all" style="width: 41.8%" title="Programación 41.8%"></div>
+<div class="bg-secondary hover:brightness-110 transition-all" style="width: 18.0%" title="Inglés 18.0%"></div>
+<div class="bg-tertiary hover:brightness-110 transition-all" style="width: 14.4%" title="Ejercicio 14.4%"></div>
+<div class="bg-surface-tint hover:brightness-110 transition-all" style="width: 13.7%" title="Descanso 13.7%"></div>
+<div class="bg-surface-bright hover:brightness-110 transition-all" style="width: 12.1%" title="Personal 12.1%"></div>
+</div>
+<!-- List of breakdown items with stylized progress bars -->
+<div class="flex flex-col gap-space-sm mt-1">
+<!-- Item 1: Programación -->
+<div class="flex flex-col p-2.5 rounded-xl bg-surface-container-lowest/50 hover:bg-surface-container-lowest transition-all">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-title-md text-title-md text-on-surface">Programación</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">14h 30m</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">41.8%</span>
+</div>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-1.5 rounded-full" style="width: 41.8%"></div>
+</div>
+</div>
+<!-- Item 2: Inglés -->
+<div class="flex flex-col p-2.5 rounded-xl bg-surface-container-lowest/50 hover:bg-surface-container-lowest transition-all">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-title-md text-title-md text-on-surface">Inglés</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">6h 15m</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">18.0%</span>
+</div>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full" style="width: 18.0%"></div>
+</div>
+</div>
+<!-- Item 3: Ejercicio -->
+<div class="flex flex-col p-2.5 rounded-xl bg-surface-container-lowest/50 hover:bg-surface-container-lowest transition-all">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="font-title-md text-title-md text-on-surface">Ejercicio</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">5h 00m</span>
+<span class="font-label-sm text-label-sm text-tertiary font-bold">14.4%</span>
+</div>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-tertiary h-1.5 rounded-full" style="width: 14.4%"></div>
+</div>
+</div>
+<!-- Item 4: Descanso -->
+<div class="flex flex-col p-2.5 rounded-xl bg-surface-container-lowest/50 hover:bg-surface-container-lowest transition-all">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-surface-tint"></span>
+<span class="font-title-md text-title-md text-on-surface">Descanso Consciente</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">4h 45m</span>
+<span class="font-label-sm text-label-sm text-surface-tint font-bold">13.7%</span>
+</div>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-surface-tint h-1.5 rounded-full" style="width: 13.7%"></div>
+</div>
+</div>
+<!-- Item 5: Personal -->
+<div class="flex flex-col p-2.5 rounded-xl bg-surface-container-lowest/50 hover:bg-surface-container-lowest transition-all">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-surface-bright"></span>
+<span class="font-title-md text-title-md text-on-surface">Personal &amp; Lectura</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">4h 10m</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">12.1%</span>
+</div>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden">
+<div class="bg-surface-bright h-1.5 rounded-full" style="width: 12.1%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Section: Persistence, Offline Engine & Sync Hub -->
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-lg relative overflow-hidden">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<!-- Left side: Storage telemetry -->
+<div class="flex items-start sm:items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-secondary shrink-0 shadow-md">
+<span class="material-symbols-outlined text-2xl">database</span>
+</div>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">Almacenamiento Local (Offline First)</h3>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-tertiary-container/20 text-tertiary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> IndexedDB Operativo
+            </span>
+</div>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1 font-body-sm text-body-sm text-on-surface-variant">
+<span>Uso: <strong class="text-on-surface">18.4 KB</strong> de 5.0 MB asignados (0.36%)</span>
+<span>•</span>
+<span>Registros: <strong class="text-secondary">48 sesiones</strong> sincronizables</span>
+<span>•</span>
+<span>Último respaldo: <span class="text-on-surface">Hoy, 19:42</span></span>
+</div>
+</div>
+</div>
+<!-- Right side: Storage Actions -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="flex items-center gap-2 px-space-md py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-all shadow-sm" id="btn-export-json" type="button">
+<span class="material-symbols-outlined text-base text-secondary">file_download</span>
+<span>Exportar Backup (.json)</span>
+</button>
+<label class="flex items-center gap-2 px-space-md py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-all cursor-pointer shadow-sm">
+<span class="material-symbols-outlined text-base text-primary">file_upload</span>
+<span>Importar JSON</span>
+<input accept=".json" class="hidden" id="input-import-json" type="file"/>
+</label>
+<button class="flex items-center gap-2 px-space-md py-2.5 rounded-full bg-primary-container hover:brightness-110 text-on-primary-container font-label-md text-label-md font-bold transition-all shadow-[0_0_16px_rgba(245,158,11,0.35)]" type="button">
+<span class="material-symbols-outlined text-base">cloud_sync</span>
+<span>Conectar API Backend</span>
+</button>
+</div>
+</div>
+<!-- Storage Progress mini bar -->
+<div class="w-full bg-surface-container-lowest rounded-full h-1 mt-space-lg overflow-hidden">
+<div class="bg-secondary h-1 rounded-full" style="width: 1.2%"></div>
+</div>
+</div>
+<!-- Toast Notification placeholder -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-2 px-4 py-3 rounded-xl bg-surface-container-highest text-on-surface shadow-2xl" id="stats-toast">
+<span class="material-symbols-outlined text-tertiary">check_circle</span>
+<span class="font-label-md text-label-md" id="stats-toast-msg">Acción completada con éxito</span>
+</div>
+</div>
+<script>
+  // Tab switching interaction
+  const tabs = document.querySelectorAll('.tab-btn');
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabs.forEach(t => {
+        t.classList.remove('active', 'bg-primary-container', 'text-on-primary-container', 'font-semibold', 'shadow-md');
+        t.classList.add('text-on-surface-variant');
+      });
+      btn.classList.add('active', 'bg-primary-container', 'text-on-primary-container', 'font-semibold', 'shadow-md');
+      btn.classList.remove('text-on-surface-variant');
+      showToast('Vista actualizada a: ' + btn.textContent.trim());
+    });
+  });
+
+  // Export JSON handler
+  const exportBtn = document.getElementById('btn-export-json');
+  if (exportBtn) {
+    exportBtn.addEventListener('click', () => {
+      const backupData = {
+        app: "Timylabs Flowy",
+        version: "2.4",
+        timestamp: new Date().toISOString(),
+        metrics: {
+          globalCompliance: "82%",
+          weeklyFocusMinutes: 2080,
+          streakDays: 5,
+          totalSessions: 48,
+          categories: {
+            programacion: 870,
+            ingles: 375,
+            ejercicio: 300,
+            descanso: 285,
+            personal: 250
+          }
+        }
+      };
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(backupData, null, 2));
+      const downloadAnchor = document.createElement('a');
+      downloadAnchor.setAttribute("href", dataStr);
+      downloadAnchor.setAttribute("download", `flowy_metrics_backup_${new Date().toISOString().slice(0,10)}.json`);
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      downloadAnchor.remove();
+      showToast('Respaldo JSON generado y descargado');
+    });
+  }
+
+  // Import JSON input handler
+  const importInput = document.getElementById('input-import-json');
+  if (importInput) {
+    importInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          try {
+            JSON.parse(event.target.result);
+            showToast('Archivo ' + file.name + ' importado correctamente');
+          } catch(err) {
+            showToast('Error al parsear el JSON');
+          }
+        };
+        reader.readAsText(file);
+      }
+    });
+  }
+
+  function showToast(text) {
+    const toast = document.getElementById('stats-toast');
+    const msg = document.getElementById('stats-toast-msg');
+    if (!toast || !msg) return;
+    msg.textContent = text;
+    toast.classList.remove('translate-y-20', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+    setTimeout(() => {
+      toast.classList.remove('translate-y-0', 'opacity-100');
+      toast.classList.add('translate-y-20', 'opacity-0');
+    }, 2800);
+  }
+</script></main></div></body></html>

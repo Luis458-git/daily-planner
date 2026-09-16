@@ -1,0 +1,3 @@
+export default function Header({ onMenu, permission, onNotifications, storageError }) {
+  return <header className="topbar"><div className="topbar-left"><button className="mobile-menu" onClick={onMenu} aria-label="Abrir o cerrar menú">☰</button><span className="window-dots" aria-hidden="true"><i /><i /><i /></span><span className="sync"><span className="live-dot" /> {storageError ? 'Cambios sin guardar' : 'Daily Planner · Almacenamiento local'}</span></div><button className="notification-button" onClick={onNotifications}>♧ {permission === 'granted' ? 'Avisos activados' : permission === 'denied' ? 'Avisos bloqueados' : permission === 'unsupported' ? 'Avisos dentro de la app' : 'Activar notificaciones'}</button></header>
+}

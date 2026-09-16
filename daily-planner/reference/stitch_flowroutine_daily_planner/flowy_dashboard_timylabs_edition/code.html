@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Flowy - Deep Focus Dashboard</title>
+<!-- Tailwind CSS CDN with forms & container queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Phosphor Icons for precise iconography -->
+<link href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css" rel="stylesheet"/>
+<link href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" rel="stylesheet"/>
+<link href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            flowy: {
+              bg: '#0a0e17',
+              panel: 'rgba(18, 25, 38, 0.72)',
+              card: 'rgba(13, 20, 32, 0.85)',
+              border: 'rgba(255, 255, 255, 0.08)',
+              borderHover: 'rgba(255, 255, 255, 0.18)',
+              accent: '#f59e0b',
+              accentLight: '#fbbf24',
+              accentHover: '#d97706',
+              glow: 'rgba(245, 158, 11, 0.15)',
+              muted: '#717f99',
+              light: '#f1f5f9'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Menlo', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-scrollbars-and-effects">
+    /* Custom scrollbars */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    /* Ambient atmospheric backdrop matching the ship/night sky visual tone */
+    .dashboard-backdrop {
+      background: radial-gradient(circle at 60% 15%, rgba(42, 60, 92, 0.45) 0%, rgba(13, 19, 32, 0.95) 60%),
+                  radial-gradient(circle at 85% 85%, rgba(26, 36, 56, 0.3) 0%, rgba(9, 13, 22, 1) 75%),
+                  #0a0e17;
+    }
+    
+    .glass-card {
+      background: rgba(16, 23, 36, 0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    
+    .glass-subcard {
+      background: rgba(11, 17, 27, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Circular SVG Progress Meter Animation */
+    .circle-progress {
+      transition: stroke-dashoffset 0.8s ease-in-out;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+    }
+  </style>
+</head>
+<body class="bg-[#05070c] text-slate-200 min-h-screen p-2 sm:p-4 md:p-6 lg:p-8 flex items-center justify-center font-sans selection:bg-amber-500/30 selection:text-amber-200 antialiased">
+<!-- BEGIN: ApplicationWindowContainer -->
+<!-- Mimics the rounded application frame with macOS top controls -->
+<main class="w-full max-w-[1340px] dashboard-backdrop rounded-3xl border border-white/10 shadow-[0_25px_80px_-15px_rgba(0,0,0,0.8)] overflow-hidden flex flex-col relative transition-all duration-300">
+<!-- BEGIN: TopBarWindowHeader -->
+<header class="px-6 py-4 flex items-center justify-between border-b border-white/5 bg-slate-900/30 backdrop-blur-md z-20">
+<!-- Window Controls & Mascot Header -->
+<div class="flex items-center space-x-6">
+<!-- Mac OS window buttons -->
+<div aria-label="Window Controls" class="flex items-center space-x-2">
+<span class="w-3.5 h-3.5 rounded-full bg-[#ff5f56] hover:opacity-80 transition cursor-pointer inline-block shadow-sm"></span>
+<span class="w-3.5 h-3.5 rounded-full bg-[#ffbd2e] hover:opacity-80 transition cursor-pointer inline-block shadow-sm"></span>
+<span class="w-3.5 h-3.5 rounded-full bg-[#27c93f] hover:opacity-80 transition cursor-pointer inline-block shadow-sm"></span>
+</div>
+<!-- Breadcrumb / Status text -->
+<div class="hidden sm:flex items-center gap-2 text-xs text-slate-400">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+<span class="font-medium tracking-wide">Flowy Cloud Sync • Active Session</span>
+</div>
+</div>
+<!-- Top Right Header Control Group -->
+<div class="flex items-center gap-3">
+<!-- Ambient Sound Controls -->
+<button class="w-9 h-9 flex items-center justify-center rounded-xl bg-slate-800/60 hover:bg-slate-700/60 border border-white/5 text-slate-300 hover:text-white transition" id="btnSoundMute" title="Toggle Soundscapes">
+<i class="ph ph-speaker-high text-lg"></i>
+</button>
+<button class="w-9 h-9 flex items-center justify-center rounded-xl bg-slate-800/60 hover:bg-slate-700/60 border border-white/5 text-amber-400 hover:text-amber-300 transition" id="btnMusicTrack" title="Lofi Station Playing">
+<i class="ph ph-music-notes text-lg"></i>
+</button>
+<div class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800/60 border border-white/5 text-xs text-emerald-400">
+<i class="ph ph-activity text-sm"></i>
+<span class="font-mono font-medium">92% Energy</span>
+</div>
+<button class="w-9 h-9 flex items-center justify-center rounded-xl bg-slate-800/60 hover:bg-slate-700/60 border border-white/5 text-slate-300 hover:text-white transition relative" title="Notifications">
+<i class="ph ph-bell text-lg"></i>
+<span class="absolute top-2 right-2 w-2 h-2 bg-amber-500 rounded-full"></span>
+</button>
+<!-- User Profile Switcher Dropdown -->
+<div class="flex items-center gap-2 pl-2 border-l border-white/10">
+<div class="flex items-center gap-2.5 px-3 py-1.5 rounded-2xl bg-slate-800/80 hover:bg-slate-700/80 border border-white/10 cursor-pointer transition">
+<!-- Scholar Mascot / Cat Avatar -->
+<div class="w-7 h-7 rounded-xl bg-gradient-to-br from-indigo-500 to-amber-500 p-0.5 flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-[#0e1626] rounded-[10px] flex items-center justify-center text-white">
+<i class="ph-fill ph-cat text-base text-amber-400"></i>
+</div>
+</div>
+<span class="text-xs font-semibold text-white">Timylabs</span>
+<span class="text-[10px] font-bold tracking-wider uppercase px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30">PREMIUM</span>
+<i class="ph ph-caret-down text-xs text-slate-400"></i>
+</div>
+</div>
+</div>
+</header>
+<!-- END: TopBarWindowHeader -->
+<!-- BEGIN: DashboardBodyLayout -->
+<div class="flex-1 flex flex-col lg:flex-row overflow-hidden">
+<!-- BEGIN: LeftNavigationSidebar -->
+<aside class="w-full lg:w-64 bg-slate-950/40 border-b lg:border-b-0 lg:border-r border-white/5 p-5 flex flex-col justify-between shrink-0">
+<div class="space-y-6">
+<!-- Mascot & Brand Logo -->
+<div class="flex items-center space-x-3 px-2 py-1">
+<div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-amber-400 to-indigo-600 p-[2px] shadow-lg shadow-amber-500/10">
+<div class="w-full h-full bg-[#0d1424] rounded-[14px] flex items-center justify-center">
+<i class="ph-bold ph-cat text-2xl text-amber-400"></i>
+</div>
+</div>
+<div>
+<h1 class="text-base font-bold text-white tracking-tight flex items-center gap-1.5">
+                Timylabs <span class="text-amber-400 text-xs font-mono font-medium">v2.4</span>
+</h1>
+<p class="text-[11px] text-slate-400">Focus &amp; Academic Flow</p>
+</div>
+</div>
+<!-- Main Nav Links -->
+<nav aria-label="Primary Navigation" class="space-y-1.5">
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-sm font-medium bg-amber-500/15 text-amber-300 border border-amber-500/25 shadow-sm transition" href="#dashboard">
+<i class="ph-bold ph-squares-four text-lg"></i>
+<span>Dashboard</span>
+<span class="ml-auto w-1.5 h-4 bg-amber-400 rounded-full"></span>
+</a>
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-400 hover:text-slate-200 hover:bg-slate-800/40 transition" href="#events">
+<i class="ph ph-calendar-blank text-lg"></i>
+<span>Events / Rutinas</span>
+</a>
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-400 hover:text-slate-200 hover:bg-slate-800/40 transition" href="#habits">
+<i class="ph ph-arrows-counter-clockwise text-lg"></i>
+<span>Habits</span>
+<span class="ml-auto text-[10px] px-1.5 py-0.5 rounded-full bg-slate-800 text-slate-300">2 Act</span>
+</a>
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-400 hover:text-slate-200 hover:bg-slate-800/40 transition" href="#focus">
+<i class="ph ph-timer text-lg"></i>
+<span>Focus</span>
+</a>
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-400 hover:text-slate-200 hover:bg-slate-800/40 transition" href="#tasks">
+<i class="ph ph-check-square-offset text-lg"></i>
+<span>Tasks</span>
+<span class="ml-auto text-[10px] px-1.5 py-0.5 rounded-full bg-slate-800 text-slate-300">3</span>
+</a>
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-400 hover:text-slate-200 hover:bg-slate-800/40 transition" href="#stats">
+<i class="ph ph-chart-line-up text-lg"></i>
+<span>Stats</span>
+</a>
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-400 hover:text-slate-200 hover:bg-slate-800/40 transition" href="#notes">
+<i class="ph ph-notebook text-lg"></i>
+<span>Notes</span>
+</a>
+<a class="flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-400 hover:text-slate-200 hover:bg-slate-800/40 transition" href="#settings">
+<i class="ph ph-gear text-lg"></i>
+<span>Settings</span>
+</a>
+</nav>
+</div>
+<!-- Sidebar Footer: Level & Goal Progress Widget -->
+<div class="mt-8 pt-4 border-t border-white/5 space-y-3">
+<div class="p-3.5 rounded-2xl bg-gradient-to-b from-slate-900/90 to-slate-950 border border-white/5 shadow-inner">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400">
+<i class="ph ph-trophy text-sm"></i>
+</div>
+<div>
+<div class="text-xs font-bold text-white leading-none">Bronze III</div>
+<div class="text-[10px] text-slate-400">Nivel 3 • Top 5%</div>
+</div>
+</div>
+<span class="text-xs font-mono font-semibold text-amber-400">53.06%</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden">
+<div class="bg-amber-400 h-1.5 rounded-full transition-all duration-700" style="width: 53.06%"></div>
+</div>
+<div class="flex justify-between items-center mt-2 text-[10px] text-slate-400">
+<span>Time logged</span>
+<span class="font-mono text-slate-300">28h 57m / 54h</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- END: LeftNavigationSidebar -->
+<!-- BEGIN: CenterAndRightContentGrid -->
+<div class="flex-1 p-5 md:p-7 overflow-y-auto space-y-6">
+<!-- Top Greeting Banner & Inspiration Quote -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-2">
+<div class="space-y-1">
+<h2 class="text-2xl md:text-3xl font-bold tracking-tight text-white flex items-center gap-2">
+              Good evening, Scholar <span>👋</span>
+</h2>
+<p class="text-sm text-slate-400 font-medium">Your space. Your rhythm. <span class="text-slate-500">| En racha para tus metas.</span></p>
+</div>
+<!-- Motivational Quote Capsule -->
+<div class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-800/40 border border-white/5 backdrop-blur-sm group hover:border-white/10 transition">
+<i class="ph ph-quotes text-amber-400"></i>
+<p class="text-xs text-slate-300 italic" id="motivationalQuote">“Discipline today, freedom tomorrow.”</p>
+<button class="ml-1 text-slate-500 hover:text-amber-400 transition" id="btnEditQuote" title="Edit quote">
+<i class="ph ph-pencil-simple text-xs"></i>
+</button>
+</div>
+</section>
+<!-- Main 2-Column Grid matching reference layout -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-6 items-start">
+<!-- Center Left (7 cols): Today's Plan & Habit Tracker -->
+<div class="xl:col-span-7 space-y-6">
+<!-- Card 1: Today's Plan (Timylabs Development Focus Card) -->
+<section class="glass-card rounded-2xl p-5 md:p-6 transition hover:border-white/15">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2 text-white font-semibold text-base">
+<i class="ph ph-calendar text-amber-400 text-lg"></i>
+<h3>Today's Plan</h3>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 rounded-lg bg-slate-800/60 text-slate-300 hover:text-white flex items-center justify-center border border-white/5" title="View Analytics">
+<i class="ph ph-chart-bar"></i>
+</button>
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-amber-400 hover:bg-amber-500 text-slate-950 text-xs font-bold transition shadow-md shadow-amber-500/20" id="btnAddNewPlan">
+<i class="ph-bold ph-plus"></i>
+<span>+ Add</span>
+</button>
+</div>
+</div>
+<!-- Main Planned Item Card -->
+<div class="glass-subcard rounded-xl p-5 border border-white/10 space-y-4">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<i class="ph ph-folder text-amber-400 text-base"></i>
+<h4 class="text-base font-semibold text-white">Timylabs Development</h4>
+<span class="text-[11px] px-2 py-0.5 rounded-md bg-amber-500/10 text-amber-400 border border-amber-500/20 font-medium">Education</span>
+</div>
+<div class="text-xs text-slate-400 flex items-center gap-1 pl-6">
+<i class="ph ph-calendar-check text-xs"></i>
+<span>Created 06.05.2026</span>
+</div>
+</div>
+<button class="text-slate-400 hover:text-white p-1 rounded-md">
+<i class="ph ph-dots-three-bold text-lg"></i>
+</button>
+</div>
+<!-- Stats Grid inside the plan card -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 py-2 border-y border-white/5 text-center">
+<div class="p-2">
+<span class="block text-[11px] text-slate-400 uppercase tracking-wider">Total Focus</span>
+<span class="text-sm md:text-base font-bold text-white font-mono">14h 15m</span>
+</div>
+<div class="p-2 border-l border-white/5">
+<span class="block text-[11px] text-slate-400 uppercase tracking-wider">Today</span>
+<span class="text-sm md:text-base font-bold text-amber-400 font-mono" id="statTodayTime">0s</span>
+</div>
+<div class="p-2 border-l border-white/5">
+<span class="block text-[11px] text-slate-400 uppercase tracking-wider">Last Active</span>
+<span class="text-sm md:text-base font-semibold text-slate-200">Yesterday</span>
+</div>
+<div class="p-2 border-l border-white/5">
+<span class="block text-[11px] text-slate-400 uppercase tracking-wider">Sessions</span>
+<span class="text-sm md:text-base font-bold text-white font-mono" id="statSessions">11</span>
+</div>
+</div>
+<!-- Action Button -->
+<div class="flex justify-end pt-1">
+<button class="px-5 py-2 rounded-xl bg-amber-400 hover:bg-amber-300 active:scale-95 text-slate-950 font-bold text-xs flex items-center gap-2 shadow-lg shadow-amber-400/25 transition" id="btnStartPlan">
+<i class="ph-fill ph-play text-sm"></i>
+<span id="btnStartPlanText">Start</span>
+</button>
+</div>
+</div>
+<!-- Secondary Planned Item: Reading -->
+<div class="mt-4 glass-subcard rounded-xl p-4 flex items-center justify-between border border-white/5 hover:border-white/10 transition">
+<div class="flex items-center gap-3">
+<i class="ph ph-book-open text-amber-400 text-lg"></i>
+<div>
+<div class="flex items-center gap-2">
+<span class="text-sm font-semibold text-white">Reading</span>
+<span class="text-[10px] px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-300 border border-amber-500/20 font-medium">Experimental</span>
+</div>
+<span class="text-xs text-slate-400">Next milestone: Deep Work Chapter 4</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="text-slate-400 hover:text-white p-1">
+<i class="ph ph-chart-line text-base"></i>
+</button>
+<button class="text-slate-400 hover:text-white p-1">
+<i class="ph ph-dots-three-bold text-base"></i>
+</button>
+</div>
+</div>
+</section>
+<!-- Card 2: Habits Tracker Matrix -->
+<section class="glass-card rounded-2xl p-5 md:p-6 transition hover:border-white/15">
+<div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+<div class="flex items-center gap-2 text-white font-semibold text-base">
+<i class="ph ph-arrows-clockwise text-amber-400 text-lg"></i>
+<h3>Habits</h3>
+</div>
+<!-- Week Navigator -->
+<div class="flex items-center gap-1.5 bg-slate-900/60 rounded-xl px-2 py-1 border border-white/5 text-xs text-slate-300">
+<button class="p-1 hover:text-white transition"><i class="ph ph-caret-left"></i></button>
+<span class="font-medium px-2">This Week</span>
+<button class="p-1 hover:text-white transition"><i class="ph ph-caret-right"></i></button>
+</div>
+<button class="w-8 h-8 rounded-lg bg-amber-400 hover:bg-amber-300 text-slate-950 flex items-center justify-center text-sm font-bold shadow-md shadow-amber-400/20 transition" id="btnAddHabit">
+<i class="ph-bold ph-plus"></i>
+</button>
+</div>
+<!-- Habit Item 1: Sport -->
+<div class="space-y-4">
+<div class="p-3.5 rounded-xl bg-slate-900/40 border border-white/5 space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs">
+<i class="ph-bold ph-check"></i>
+</span>
+<span class="text-sm font-semibold text-white">Sport</span>
+<span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">ACTIVE</span>
+</div>
+<div class="flex items-center gap-2 text-slate-400 text-xs">
+<button class="hover:text-amber-400 transition"><i class="ph ph-pencil-simple"></i></button>
+<button class="hover:text-slate-200 transition"><i class="ph ph-chart-bar"></i></button>
+<button class="hover:text-rose-400 transition"><i class="ph ph-trash"></i></button>
+</div>
+</div>
+<!-- Days of Week Checkers -->
+<div class="grid grid-cols-7 gap-1.5 text-center">
+<div>
+<span class="text-[10px] text-slate-400 block mb-1">Mon</span>
+<button class="habit-check w-full py-1.5 rounded-lg bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 text-amber-400 text-xs flex items-center justify-center">
+<i class="ph-bold ph-check"></i>
+</button>
+</div>
+<div>
+<span class="text-[10px] text-slate-400 block mb-1">Tue</span>
+<button class="habit-check w-full py-1.5 rounded-lg bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 text-amber-400 text-xs flex items-center justify-center">
+<i class="ph-bold ph-check"></i>
+</button>
+</div>
+<div>
+<span class="text-[10px] text-slate-400 block mb-1">Wed</span>
+<button class="habit-check w-full py-1.5 rounded-lg bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 text-amber-400 text-xs flex items-center justify-center">
+<i class="ph-bold ph-check"></i>
+</button>
+</div>
+<div>
+<span class="text-[10px] text-slate-400 block mb-1">Thu</span>
+<button class="habit-check w-full py-1.5 rounded-lg bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 text-amber-400 text-xs flex items-center justify-center">
+<i class="ph-bold ph-check"></i>
+</button>
+</div>
+<div>
+<span class="text-[10px] text-slate-400 block mb-1">Fri</span>
+<button class="habit-check w-full py-1.5 rounded-lg bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 text-amber-400 text-xs flex items-center justify-center">
+<i class="ph-bold ph-check"></i>
+</button>
+</div>
+<div>
+<span class="text-[10px] text-slate-400 block mb-1">Sat</span>
+<button class="habit-check w-full py-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 border border-white/5 text-slate-400 text-xs flex items-center justify-center">
+<i class="ph-bold ph-circle"></i>
+</button>
+</div>
+<div>
+<span class="text-[10px] text-slate-400 block mb-1">Sun</span>
+<button class="habit-check w-full py-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 border border-white/5 text-slate-400 text-xs flex items-center justify-center">
+<i class="ph-bold ph-circle"></i>
+</button>
+</div>
+</div>
+</div>
+<!-- Habit Item 2: Reading -->
+<div class="p-3.5 rounded-xl bg-slate-900/40 border border-white/5 space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs">
+<i class="ph-bold ph-check"></i>
+</span>
+<span class="text-sm font-semibold text-white">Reading</span>
+<span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">ACTIVE</span>
+</div>
+<div class="flex items-center gap-2 text-slate-400 text-xs">
+<button class="hover:text-amber-400 transition"><i class="ph ph-pencil-simple"></i></button>
+<button class="hover:text-slate-200 transition"><i class="ph ph-chart-bar"></i></button>
+<button class="hover:text-rose-400 transition"><i class="ph ph-trash"></i></button>
+</div>
+</div>
+<!-- Days of Week Checkers -->
+<div class="grid grid-cols-7 gap-1.5 text-center">
+<div>
+<span class="text-[10px] text-slate-400 block mb-1">Mon</span>
+<button class="habit-check w-full py-1.5 rounded-lg bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 text-amber-400 text-xs flex items-center justify-center">
+<i class="ph-bold ph-check"></i>
+</button>
+</div>
+<div>
+<span class="text-[10px] text-slate-400 block mb-1">Tue</span>
+<button class="habit-check w-full py-1.5 rounded-lg bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 text-amber-400 text-xs flex items-center justify-center">
+<i class="ph-bold ph-check"></i>
+</button>
+</div>
+<div>
+<span class="text-[10px] text-slate-400 block mb-1">Wed</span>
+<button class="habit-check w-full py-1.5 rounded-lg bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 text-amber-400 text-xs flex items-center justify-center">
+<i class="ph-bold ph-check"></i>
+</button>
+</div>
+<div>
+<span class="text-[10px] text-slate-400 block mb-1">Thu</span>
+<button class="habit-check w-full py-1.5 rounded-lg bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 text-amber-400 text-xs flex items-center justify-center">
+<i class="ph-bold ph-check"></i>
+</button>
+</div>
+<div>
+<span class="text-[10px] text-slate-400 block mb-1">Fri</span>
+<button class="habit-check w-full py-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 border border-white/5 text-slate-400 text-xs flex items-center justify-center">
+<i class="ph-bold ph-circle"></i>
+</button>
+</div>
+<div>
+<span class="text-[10px] text-slate-400 block mb-1">Sat</span>
+<button class="habit-check w-full py-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 border border-white/5 text-slate-400 text-xs flex items-center justify-center">
+<i class="ph-bold ph-circle"></i>
+</button>
+</div>
+<div>
+<span class="text-[10px] text-slate-400 block mb-1">Sun</span>
+<button class="habit-check w-full py-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 border border-white/5 text-slate-400 text-xs flex items-center justify-center">
+<i class="ph-bold ph-circle"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Center Right (5 cols): Widgets Column -->
+<div class="xl:col-span-5 space-y-6">
+<!-- Widget 1: Focus Timer with Hours : Minutes : Seconds -->
+<section class="glass-card rounded-2xl p-5 border border-white/10 relative overflow-hidden">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2 text-xs font-semibold text-slate-300 uppercase tracking-wider">
+<i class="ph ph-clock text-amber-400 text-sm"></i>
+<span>Focus Timer</span>
+</div>
+<!-- Timer Mode Switcher -->
+<div class="relative">
+<select class="bg-slate-800/80 text-white text-xs rounded-xl px-3 py-1 border border-white/10 appearance-none focus:outline-none focus:border-amber-400 pr-7 cursor-pointer" id="timerModeSelect">
+<option value="pomodoro">Pomodoro (25m)</option>
+<option value="longFocus">Long Focus (50m)</option>
+<option selected="" value="continuous">Continuous StopWatch</option>
+</select>
+<i class="ph ph-caret-down absolute right-2.5 top-2 text-[10px] text-slate-400 pointer-events-none"></i>
+</div>
+</div>
+<!-- Main Digits Display -->
+<div class="flex items-center justify-between py-2">
+<div class="flex items-baseline space-x-2 font-mono">
+<div class="text-center">
+<div class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight" id="timerHours">08</div>
+<span class="text-[10px] uppercase font-sans text-slate-400 tracking-wider">HRS</span>
+</div>
+<span class="text-2xl text-slate-600 font-bold">:</span>
+<div class="text-center">
+<div class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight" id="timerMinutes">08</div>
+<span class="text-[10px] uppercase font-sans text-slate-400 tracking-wider">MIN</span>
+</div>
+<span class="text-2xl text-slate-600 font-bold">:</span>
+<div class="text-center">
+<div class="text-3xl sm:text-4xl font-extrabold text-amber-400 tracking-tight" id="timerSeconds">23</div>
+<span class="text-[10px] uppercase font-sans text-slate-400 tracking-wider">SEC</span>
+</div>
+</div>
+<!-- Big Circular Play / Pause Action Button -->
+<button class="w-14 h-14 rounded-full border-2 border-amber-400/40 bg-slate-900 hover:bg-amber-400/10 hover:border-amber-400 active:scale-95 text-amber-400 flex items-center justify-center transition shadow-lg shadow-amber-500/10" id="btnMainPlayPause" title="Start Focus Session">
+<i class="ph-fill ph-play text-xl ml-0.5" id="playIcon"></i>
+</button>
+</div>
+</section>
+<!-- Widget 2: Focus Overview with Circular Goal Progress -->
+<section class="glass-card rounded-2xl p-5 border border-white/10">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2 text-sm font-semibold text-white">
+<i class="ph ph-target text-amber-400"></i>
+<h4>Focus Overview</h4>
+</div>
+</div>
+<div class="flex items-center justify-between gap-4">
+<!-- Breakdown list -->
+<div class="space-y-2.5 flex-1">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-400">Today Focus</span>
+<span class="font-mono font-semibold text-white" id="overviewToday">0s</span>
+</div>
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-400">This Week</span>
+<span class="font-mono font-semibold text-white">14h 15m</span>
+</div>
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-400">This Month</span>
+<span class="font-mono font-semibold text-white">56h 42m</span>
+</div>
+</div>
+<!-- Circular Progress Meter: 82% Weekly Goal -->
+<div class="relative w-28 h-28 flex items-center justify-center shrink-0">
+<svg class="w-full h-full" viewbox="0 0 100 100">
+<!-- Background circle -->
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="rgba(255,255,255,0.07)" stroke-width="7"></circle>
+<!-- Progress circle (stroke-dasharray = 251.2, 82% = 45.2) -->
+<circle class="circle-progress" cx="50" cy="50" fill="transparent" r="40" stroke="#f59e0b" stroke-dasharray="251.2" stroke-dashoffset="45.2" stroke-linecap="round" stroke-width="7"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="text-lg font-bold font-mono text-white leading-none">82%</span>
+<span class="text-[9px] text-slate-400 mt-1 font-medium leading-tight">Weekly Goal</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Widget 3: Countdowns / Deadlines -->
+<section class="glass-card rounded-2xl p-5 border border-white/10 space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-sm font-semibold text-white">
+<i class="ph ph-hourglass text-amber-400"></i>
+<h4>Countdowns</h4>
+</div>
+<button class="flex items-center gap-1 text-xs text-slate-400 hover:text-amber-400 font-medium transition" id="btnAddCountdown">
+<i class="ph-bold ph-plus"></i>
+<span>Add</span>
+</button>
+</div>
+<!-- Countdown items -->
+<div class="space-y-2.5">
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-900/40 border border-white/5">
+<div>
+<div class="text-xs font-semibold text-white">Final Project</div>
+<div class="text-[10px] text-slate-400">22 May 2026</div>
+</div>
+<span class="px-2.5 py-1 rounded-lg bg-amber-400/10 text-amber-300 font-mono text-xs font-semibold border border-amber-400/20">
+                    18d 17h
+                  </span>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-900/40 border border-white/5">
+<div>
+<div class="text-xs font-semibold text-white">Project Presentation</div>
+<div class="text-[10px] text-slate-400">31 May 2026</div>
+</div>
+<span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 font-mono text-xs font-semibold border border-white/5">
+                    9d 17h
+                  </span>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-900/40 border border-white/5">
+<div>
+<div class="text-xs font-semibold text-white">Midterm Exam</div>
+<div class="text-[10px] text-slate-400">15 June 2026</div>
+</div>
+<span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 font-mono text-xs font-semibold border border-white/5">
+                    24d 9h
+                  </span>
+</div>
+</div>
+<div class="text-center pt-1">
+<a class="text-xs text-slate-400 hover:text-slate-200 transition font-medium" href="#all-countdowns">View all</a>
+</div>
+</section>
+<!-- Widget 4: Tasks List with Tabs & Checkboxes -->
+<section class="glass-card rounded-2xl p-5 border border-white/10 space-y-3.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-sm font-semibold text-white">
+<i class="ph ph-check-circle text-amber-400"></i>
+<h4>Tasks</h4>
+</div>
+<button class="flex items-center gap-1 text-xs text-slate-400 hover:text-amber-400 font-medium transition" id="btnAddTaskModal">
+<i class="ph-bold ph-plus"></i>
+<span>Add</span>
+</button>
+</div>
+<!-- Task State Filter Tabs -->
+<div class="flex items-center gap-2 border-b border-white/5 pb-2 text-xs">
+<button class="px-2.5 py-1 rounded-md bg-amber-400/15 text-amber-300 font-semibold">To-Do</button>
+<button class="px-2.5 py-1 rounded-md text-slate-400 hover:text-slate-200">In Progress</button>
+<button class="px-2.5 py-1 rounded-md text-slate-400 hover:text-slate-200">Done</button>
+</div>
+<!-- Checkable Tasks List -->
+<div class="space-y-2" id="tasksListContainer">
+<label class="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-800/40 cursor-pointer transition select-none group">
+<input class="rounded border-slate-700 bg-slate-900 text-amber-500 focus:ring-0 focus:ring-offset-0 w-4 h-4 cursor-pointer" type="checkbox"/>
+<span class="text-xs text-slate-300 group-hover:text-white transition">Review chapter 5</span>
+</label>
+<label class="flex items-center gap-3 p-2 rounded-xl bg-slate-900/30 hover:bg-slate-800/40 cursor-pointer transition select-none group">
+<input checked="" class="rounded border-slate-700 bg-slate-900 text-amber-500 focus:ring-0 focus:ring-offset-0 w-4 h-4 cursor-pointer" type="checkbox"/>
+<span class="text-xs text-slate-400 line-through group-hover:text-slate-300 transition">Build study dashboard</span>
+</label>
+<label class="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-800/40 cursor-pointer transition select-none group">
+<input class="rounded border-slate-700 bg-slate-900 text-amber-500 focus:ring-0 focus:ring-offset-0 w-4 h-4 cursor-pointer" type="checkbox"/>
+<span class="text-xs text-slate-300 group-hover:text-white transition">Read research papers</span>
+</label>
+</div>
+<div class="text-center pt-1">
+<a class="text-xs text-slate-400 hover:text-slate-200 transition font-medium" href="#all-tasks">View all tasks</a>
+</div>
+</section>
+</div>
+</div>
+</div>
+<!-- END: CenterAndRightContentGrid -->
+</div>
+<!-- END: DashboardBodyLayout -->
+</main>
+<!-- END: ApplicationWindowContainer -->
+<!-- BEGIN: InteractiveScripts -->
+<!-- Timer Controller Script -->
+<script data-purpose="focus-timer-controller">
+    (function () {
+      let isRunning = false;
+      let totalSeconds = 8 * 3600 + 8 * 60 + 23; // initialised as 08:08:23 as depicted
+      let sessionSeconds = 0;
+      let timerInterval = null;
+
+      const hoursEl = document.getElementById('timerHours');
+      const minsEl = document.getElementById('timerMinutes');
+      const secsEl = document.getElementById('timerSeconds');
+      const playBtn = document.getElementById('btnMainPlayPause');
+      const playIcon = document.getElementById('playIcon');
+      const startPlanBtn = document.getElementById('btnStartPlan');
+      const startPlanText = document.getElementById('btnStartPlanText');
+      const statTodayTime = document.getElementById('statTodayTime');
+      const overviewToday = document.getElementById('overviewToday');
+      const statSessions = document.getElementById('statSessions');
+
+      function formatPad(num) {
+        return String(num).padStart(2, '0');
+      }
+
+      function updateDisplay() {
+        const hrs = Math.floor(totalSeconds / 3600);
+        const rem = totalSeconds % 3600;
+        const mins = Math.floor(rem / 60);
+        const secs = rem % 60;
+
+        hoursEl.textContent = formatPad(hrs);
+        minsEl.textContent = formatPad(mins);
+        secsEl.textContent = formatPad(secs);
+
+        // Format for today's plan
+        const todayHrs = Math.floor(sessionSeconds / 3600);
+        const todayMins = Math.floor((sessionSeconds % 3600) / 60);
+        const todaySecs = sessionSeconds % 60;
+        
+        let formattedToday = '';
+        if (todayHrs > 0) formattedToday += todayHrs + 'h ';
+        if (todayMins > 0 || todayHrs > 0) formattedToday += todayMins + 'm ';
+        formattedToday += todaySecs + 's';
+
+        statTodayTime.textContent = formattedToday;
+        overviewToday.textContent = formattedToday;
+      }
+
+      function toggleTimer() {
+        isRunning = !isRunning;
+        if (isRunning) {
+          playIcon.className = 'ph-fill ph-pause text-xl';
+          startPlanText.textContent = 'Pause';
+          startPlanBtn.classList.replace('bg-amber-400', 'bg-emerald-400');
+
+          timerInterval = setInterval(() => {
+            totalSeconds++;
+            sessionSeconds++;
+            updateDisplay();
+          }, 1000);
+        } else {
+          playIcon.className = 'ph-fill ph-play text-xl ml-0.5';
+          startPlanText.textContent = 'Resume';
+          startPlanBtn.classList.replace('bg-emerald-400', 'bg-amber-400');
+          clearInterval(timerInterval);
+        }
+      }
+
+      playBtn.addEventListener('click', toggleTimer);
+      startPlanBtn.addEventListener('click', toggleTimer);
+
+      // Quote edit interactive prompt
+      const btnEditQuote = document.getElementById('btnEditQuote');
+      const motivationalQuote = document.getElementById('motivationalQuote');
+      btnEditQuote.addEventListener('click', () => {
+        const current = motivationalQuote.textContent.replace(/[“”]/g, '');
+        const updated = prompt('Enter your personal mantra / focus quote:', current);
+        if (updated && updated.trim()) {
+          motivationalQuote.textContent = `“${updated.trim()}”`;
+        }
+      });
+
+      // Interactive habit days toggle
+      const habitButtons = document.querySelectorAll('.habit-check');
+      habitButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const icon = btn.querySelector('i');
+          if (icon.classList.contains('ph-check')) {
+            icon.className = 'ph-bold ph-circle';
+            btn.className = 'habit-check w-full py-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 border border-white/5 text-slate-400 text-xs flex items-center justify-center';
+          } else {
+            icon.className = 'ph-bold ph-check';
+            btn.className = 'habit-check w-full py-1.5 rounded-lg bg-amber-400/10 hover:bg-amber-400/20 border border-amber-400/30 text-amber-400 text-xs flex items-center justify-center';
+          }
+        });
+      });
+
+      // Quick Add Task capability
+      const btnAddTaskModal = document.getElementById('btnAddTaskModal');
+      const tasksListContainer = document.getElementById('tasksListContainer');
+      btnAddTaskModal.addEventListener('click', () => {
+        const taskName = prompt('Enter new task name:');
+        if (taskName && taskName.trim()) {
+          const label = document.createElement('label');
+          label.className = 'flex items-center gap-3 p-2 rounded-xl hover:bg-slate-800/40 cursor-pointer transition select-none group';
+          label.innerHTML = `
+            <input type="checkbox" class="rounded border-slate-700 bg-slate-900 text-amber-500 focus:ring-0 focus:ring-offset-0 w-4 h-4 cursor-pointer">
+            <span class="text-xs text-slate-300 group-hover:text-white transition">${taskName.trim()}</span>
+          `;
+          tasksListContainer.appendChild(label);
+        }
+      });
+    })();
+  </script>
+<!-- END: InteractiveScripts -->
+</body></html>
