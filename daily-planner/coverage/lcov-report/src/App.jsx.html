@@ -1,0 +1,301 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for src/App.jsx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">src</a> App.jsx</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">65.97% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>64/97</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">50% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>21/42</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">51.11% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>23/45</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">86.66% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>39/45</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line medium'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">315x</span>
+<span class="cline-any cline-yes">315x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useState, useEffect, useRef } from 'react'
+import Header from './Components/Header'
+import Sidebar from './Components/Sidebar'
+import Dashboard from './Pages/Dashboard'
+import Weekly from './Pages/Weekly'
+import Activities from './Pages/Activities'
+import Focus from './Pages/Focus'
+import Statistics from './Pages/Statistics'
+import useTimer from './Components/useTimer'
+import useReminders from './Components/useReminders'
+import { readData, initialData, STORAGE_KEY, dateKey, dayIndex, weekDates } from './Services/routineService'
+import './Styles/App.css'
+import './Styles/Dashboard.css'
+import './Styles/Routine.css'
+&nbsp;
+function load() {
+  try { return { data: readData(localStorage), error: '' } }
+  catch { <span class="cstat-no" title="statement not covered" >return { data: initialData(), error: 'No se pudieron leer los datos guardados. Se muestran ejemplos; los datos anteriores no se sobrescribirán.' } </span>}
+}
+const pages = ['dashboard', 'week', 'timer', 'activities', 'stats']
+export default function App() {
+  const [initial] = useState(load)
+  const [data, setData] = useState(initial.data)
+  const [storageError, setStorageError] = useState(initial.error)
+  const [page, setPage] = useState(() =&gt; pages.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'dashboard')
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [today, setToday] = useState(() =&gt; dateKey())
+  const [selectedDay, setSelectedDay] = useState(() =&gt; dayIndex())
+  const [editing, setEditing] = useState(null)
+  const [formKey, setFormKey] = useState(0)
+  const [filter, setFilter] = useState('all')
+  const [query, setQuery] = useState('')
+  const [feedback, setFeedback] = useState('')
+  const [deleting, setDeleting] = useState(null)
+  const deleteDialog = useRef(null)
+  const timer = useTimer(<span class="fstat-no" title="function not covered" >se</span>ssion =&gt; <span class="cstat-no" title="statement not covered" >setData(<span class="fstat-no" title="function not covered" >pr</span>evious =&gt; (<span class="cstat-no" title="statement not covered" >{ ...previous, sessions: [...previous.sessions, session] })</span>))</span>
+  const reminders = useReminders(data.activities, data.notices, setData)
+  // Persistencia: cada cambio guarda el estado completo en el navegador.
+  useEffect(() =&gt; {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (initial.error) <span class="cstat-no" title="statement not covered" >return</span>
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)) }
+    catch { <span class="cstat-no" title="statement not covered" >queueMicrotask(<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >setStorageError('No se pudieron guardar los cambios. Comprueba el espacio o los permisos de almacenamiento.'))</span> </span>}
+  }, [data, initial.error])
+  useEffect(() =&gt; {
+    const interval = setInterval(<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >setToday(dateKey()),</span> 1000)
+    function <span class="fstat-no" title="function not covered" >onHash(</span>) { const next = <span class="cstat-no" title="statement not covered" >location.hash.slice(1);</span> <span class="cstat-no" title="statement not covered" >if (pages.includes(next)) <span class="cstat-no" title="statement not covered" >setPage(next) </span></span>}
+    window.addEventListener('hashchange', onHash)
+    return () =&gt; { clearInterval(interval); window.removeEventListener('hashchange', onHash) }
+  }, [])
+  function navigate(next) { setPage(next); location.hash = next; setMenuOpen(false) }
+  function clearForm() { setEditing(null); setFormKey(key =&gt; key + 1) }
+  function save(activity) {
+    setData(previous =&gt; ({ ...previous, activities: activity.id ? <span class="branch-0 cbranch-no" title="branch not covered" >previous.activities.map(<span class="fstat-no" title="function not covered" >a </span>=&gt; <span class="cstat-no" title="statement not covered" >a.id === activity.id ? { ...a, ...activity } : a)</span> </span>: [...previous.activities, { ...activity, id: crypto.randomUUID(), completedDates: [] }] }))
+    setFeedback(activity.id ? <span class="branch-0 cbranch-no" title="branch not covered" >'Actividad actualizada.' </span>: 'Actividad creada.'); clearForm()
+  }
+  function confirmDelete() {
+    setData(previous =&gt; ({ ...previous, activities: previous.activities.filter(a =&gt; a.id !== deleting.id), notices: previous.notices.filter(<span class="fstat-no" title="function not covered" >n </span>=&gt; <span class="cstat-no" title="statement not covered" >n.activityId !== deleting.id)</span> }))
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (editing?.id === deleting.id) <span class="cstat-no" title="statement not covered" >clearForm()</span>
+    setFeedback('Actividad eliminada.'); deleteDialog.current.close(); setDeleting(null)
+  }
+  const dates = weekDates(new Date(`${today}T12:00:00`))
+  const todaysActivities = data.activities.filter(a =&gt; a.days.includes(dayIndex(new Date(`${today}T12:00:00`))))
+  const actions = {
+<span class="fstat-no" title="function not covered" >    on</span>Toggle(id, date) { <span class="cstat-no" title="statement not covered" >setData(<span class="fstat-no" title="function not covered" >pr</span>evious =&gt; (<span class="cstat-no" title="statement not covered" >{ ...previous, activities: previous.activities.map(<span class="fstat-no" title="function not covered" >a </span>=&gt; <span class="cstat-no" title="statement not covered" >a.id === id ? { ...a, completedDates: a.completedDates.includes(date) ? a.completedDates.filter(<span class="fstat-no" title="function not covered" >d </span>=&gt; <span class="cstat-no" title="statement not covered" >d !== date)</span> : [...a.completedDates, date] } : a)</span> })</span>) </span>},
+<span class="fstat-no" title="function not covered" >    on</span>Edit(activity) { <span class="cstat-no" title="statement not covered" >setEditing(activity); <span class="cstat-no" title="statement not covered" ></span>setFormKey(<span class="fstat-no" title="function not covered" >ke</span>y =&gt; <span class="cstat-no" title="statement not covered" >key + 1)</span>; <span class="cstat-no" title="statement not covered" ></span>navigate('activities') </span>},
+    onDelete(activity) { setDeleting(activity); deleteDialog.current.showModal() },
+<span class="fstat-no" title="function not covered" >    on</span>Focus(id) { <span class="cstat-no" title="statement not covered" >timer.selectActivity(id); <span class="cstat-no" title="statement not covered" ></span>navigate('timer'); <span class="cstat-no" title="statement not covered" ></span>if (timer.locked) <span class="cstat-no" title="statement not covered" >setFeedback('Finaliza la sesión actual antes de cambiar de actividad.') </span></span>},
+  }
+  const planned = dates.reduce((sum, _, index) =&gt; sum + data.activities.filter(a =&gt; a.days.includes(index)).length, 0)
+  const completed = dates.reduce((sum, date, index) =&gt; sum + data.activities.filter(a =&gt; a.days.includes(index) &amp;&amp; a.completedDates.includes(dateKey(date))).length, 0)
+  return &lt;div className="app-shell"&gt;&lt;Sidebar page={page} navigate={navigate} open={menuOpen} percent={planned ? Math.round(completed / planned * 100) : <span class="branch-1 cbranch-no" title="branch not covered" >0}</span> /&gt;&lt;div className="workspace"&gt;&lt;Header onMenu={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >setMenuOpen(<span class="fstat-no" title="function not covered" >op</span>en =&gt; <span class="cstat-no" title="statement not covered" >!open)</span>}</span> permission={reminders.permission} onNotifications={reminders.requestPermission} storageError={storageError} /&gt;&lt;main id="main-content"&gt;{storageError &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;p className="error" role="alert"&gt;{storageError}&lt;/p&gt;}</span>{reminders.permission === 'denied' &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;p className="muted"&gt;Las notificaciones están bloqueadas en el navegador. Puedes habilitarlas en los permisos del sitio; los avisos internos siguen activos.&lt;/p&gt;}</span>{feedback &amp;&amp; &lt;div className="feedback" role="status"&gt;{feedback}&lt;button onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >setFeedback('')}</span> aria-label="Cerrar mensaje"&gt;×&lt;/button&gt;&lt;/div&gt;}{reminders.active.map(<span class="fstat-no" title="function not covered" >no</span>tice =&gt; <span class="cstat-no" title="statement not covered" >&lt;div className="reminder" role="alert" key={notice.id}&gt;&lt;div&gt;&lt;strong&gt;◷ {notice.title}&lt;/strong&gt;&lt;p&gt;Actividad programada a las {notice.start}&lt;/p&gt;&lt;/div&gt;&lt;div className="actions"&gt;&lt;button onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >reminders.snooze(notice.id, 5)}</span>&gt;Posponer 5 min&lt;/button&gt;&lt;button onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >reminders.snooze(notice.id, 10)}</span>&gt;Posponer 10 min&lt;/button&gt;&lt;button onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >reminders.dismiss(notice.id)}</span>&gt;Descartar&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;)</span>}{page === 'dashboard' &amp;&amp; &lt;Dashboard data={data} today={today} todaysActivities={todaysActivities} timer={timer} actions={actions} navigate={navigate} /&gt;}{page === 'week' &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;Weekly activities={data.activities} dates={dates} selectedDay={selectedDay} setSelectedDay={setSelectedDay} actions={actions} /&gt;}</span>{page === 'activities' &amp;&amp; &lt;Activities activities={data.activities} editing={editing} formKey={formKey} onSave={save} onCancel={clearForm} actions={actions} filter={filter} setFilter={setFilter} query={query} setQuery={setQuery} date={filter === 'all' ? today : <span class="branch-1 cbranch-no" title="branch not covered" >dateKey(dates[Number(filter)])}</span> /&gt;}{page === 'timer' &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;Focus timer={timer} activities={data.activities} sessions={data.sessions} /&gt;}</span>{page === 'stats' &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >&lt;Statistics activities={data.activities} sessions={data.sessions} dates={dates} /&gt;}</span>&lt;footer&gt;Daily Planner · Tu espacio, tu ritmo &lt;span&gt;Datos guardados en este navegador&lt;/span&gt;&lt;/footer&gt;&lt;/main&gt;&lt;/div&gt;&lt;dialog ref={deleteDialog} className="delete-dialog" onCancel={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >setDeleting(null)}</span>&gt;&lt;h2&gt;¿Eliminar esta actividad?&lt;/h2&gt;&lt;p&gt;Se eliminará “{deleting?.title}” de tu rutina.&lt;/p&gt;&lt;div className="actions"&gt;&lt;button onClick={() =&gt; { deleteDialog.current.close(); setDeleting(null) }}&gt;Cancelar&lt;/button&gt;&lt;button className="danger" onClick={confirmDelete}&gt;Eliminar actividad&lt;/button&gt;&lt;/div&gt;&lt;/dialog&gt;&lt;/div&gt;
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-09-16T17:04:50.684Z
+            </div>
+        <script src="../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../sorter.js"></script>
+        <script src="../block-navigation.js"></script>
+    </body>
+</html>
+    

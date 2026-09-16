@@ -1,0 +1,55 @@
+﻿import { beforeEach, describe, expect, jest, test } from '@jest/globals'
+import { renderHook, act } from '@testing-library/react'
+import useTimer from './useTimer'
+
+beforeEach(() => { jest.useFakeTimers(); jest.setSystemTime(new Date(2026, 8, 16, 9)) })
+describe('useTimer', () => {
+  test('pausa y continúa sin contabilizar el tiempo en pausa', () => {
+    const save = jest.fn()
+    const { result } = renderHook(() => useTimer(save))
+    act(() => result.current.toggle())
+    act(() => jest.advanceTimersByTime(10000))
+    act(() => result.current.toggle())
+    expect(result.current.remaining).toBe(1490)
+    act(() => jest.advanceTimersByTime(20000))
+    expect(result.current.remaining).toBe(1490)
+    act(() => result.current.toggle())
+    act(() => jest.advanceTimersByTime(5000))
+    act(() => result.current.finish())
+    expect(save).toHaveBeenCalledWith(expect.objectContaining({ seconds: 15, kind: 'focus' }))
+  })
+  test.each([25, 45, 60])('permite configurar %i minutos', minutes => {
+    const { result } = renderHook(() => useTimer(jest.fn()))
+    act(() => result.current.choose(minutes))
+    expect(result.current.remaining).toBe(minutes * 60)
+  })
+  test('bloquea cambios de actividad y duración mientras transcurre una sesión', () => {
+    const { result } = renderHook(() => useTimer(jest.fn()))
+    act(() => result.current.selectActivity('one'))
+    act(() => result.current.toggle())
+    act(() => { result.current.choose(60); result.current.selectActivity('two') })
+    expect(result.current.activityId).toBe('one')
+    expect(result.current.total).toBe(1500)
+    act(() => result.current.addTime())
+    act(() => jest.advanceTimersByTime(1500000))
+    expect(result.current.remaining).toBe(300)
+  })
+  test.each([5, 10, 15])('registra una sola vez un descanso de %i minutos', minutes => {
+    const save = jest.fn()
+    const { result } = renderHook(() => useTimer(save))
+    act(() => result.current.choose(minutes, 'break'))
+    act(() => result.current.toggle())
+    act(() => jest.advanceTimersByTime(minutes * 60000 + 1000))
+    act(() => result.current.finish())
+    expect(save).toHaveBeenCalledTimes(1)
+    expect(save).toHaveBeenCalledWith(expect.objectContaining({ kind: 'break', seconds: minutes * 60 }))
+  })
+  test('limpia el intervalo y no guarda una sesión que nunca comenzó', () => {
+    const save = jest.fn()
+    const { result, unmount } = renderHook(() => useTimer(save))
+    act(() => result.current.finish())
+    expect(save).not.toHaveBeenCalled()
+    unmount()
+    expect(jest.getTimerCount()).toBe(0)
+  })
+})

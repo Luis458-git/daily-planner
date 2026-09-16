@@ -1,4 +1,4 @@
-﻿# Flowy · Daily Planner
+# Flowy · Daily Planner
 
 Aplicación de planificación diaria desarrollada con React y Vite. Incluye dashboard, rutina semanal, gestión de actividades, temporizador, descansos, recordatorios y estadísticas. Su diseño adapta las cinco pantallas entregadas en el ZIP de referencia.
 
@@ -26,7 +26,7 @@ npm run build
 npm run preview
 ```
 
-Las pruebas usan Jest y módulos ES de Node; Node puede mostrar un aviso de VM Modules experimental. La compilación genera `dist/`. `preview` sirve esa compilación localmente; no publica el sitio en internet.
+Las pruebas usan Jest y Babel para procesar los módulos JavaScript. También se pueden ejecutar con `npx jest`. La compilación genera `dist/`. `preview` sirve esa compilación localmente; no publica el sitio en internet.
 
 ## Funciones
 
@@ -40,7 +40,7 @@ Las pruebas usan Jest y módulos ES de Node; Node puede mostrar un aviso de VM M
 
 ## Datos y notificaciones
 
-Los datos se guardan en `localStorage` bajo la clave `daily-planner-v1`. No se necesita una API, una cuenta ni variables de entorno. Los ejemplos iniciales aparecen únicamente si no hay datos guardados; una lista vacía se conserva.
+Los datos se guardan en `localStorage` bajo la clave `daily-planner-v1`. Las funciones de planificación no necesitan una cuenta ni variables de entorno; las consultas de Costa Rica requieren conexión a internet. Los ejemplos iniciales aparecen únicamente si no hay datos guardados; una lista vacía se conserva.
 
 Pulsa **Activar notificaciones** para solicitar permiso. Si lo rechazas o el navegador no admite la API, seguirás viendo avisos dentro de la aplicación. Las notificaciones requieren un contexto permitido por el navegador, como localhost o HTTPS.
 
@@ -61,3 +61,25 @@ Completar una actividad afecta a su fecha seleccionada; su siguiente repetición
 El ZIP original permanece en `src/Images/stitch_flowroutine_daily_planner.zip`. Su contenido se extrajo sin modificar en `reference/stitch_flowroutine_daily_planner/`.
 
 Se conservaron el estilo oscuro, la navegación lateral, los acentos ámbar y las tarjetas de las referencias. Se adaptaron sus contenidos al alcance funcional del checklist: los datos son locales, sin promesas de sincronización en la nube, membresía premium o integración con servicios externos.
+
+## Extensión 2: consultas de Costa Rica
+
+Abre **Consultas Costa Rica** en la navegación lateral. Se reutilizan las tarjetas y estilos de Daily Planner. Los componentes están en `src/Components/`, respetando las mayúsculas de la carpeta existente.
+
+- `TipoCambio.jsx` consulta `http://apis.gometa.org/tdc/tdc.json` al montarse. Muestra compra, venta con exactamente dos decimales y fecha de actualización.
+- `ConsultaCedula.jsx` consulta `https://api.hacienda.go.cr/fe/ae?identificacion={valor}` al pulsar **Consultar**. Utiliza la identificación escrita, muestra nombre, estado de inscripción y morosidad, y maneja carga, datos ausentes y errores de conexión.
+- No se almacenan identificaciones ni respuestas de Hacienda en localStorage.
+
+Pruebas de esta extensión:
+
+```powershell
+npm.cmd run test -- --runTestsByPath src/Components/TipoCambio.test.jsx src/Components/ConsultaCedula.test.jsx
+```
+
+Las 19 pruebas nuevas simulan `fetch`; no realizan peticiones reales. Las de cédula utilizan `userEvent`, respuestas con la estructura real de Hacienda y consultas asíncronas sin esperas arbitrarias. La suite completa pasó con 87 pruebas.
+
+### Comprobación de las APIs y CORS
+
+En la comprobación manual automatizada con Edge desde `http://127.0.0.1:5174`, ambas APIs devolvieron HTTP 200; Hacienda se consultó con la identificación de ejemplo `2100042005`. No se observó bloqueo CORS en esa ejecución. Esto no garantiza disponibilidad permanente ni permisos para otros orígenes.
+
+Si el navegador muestra un error CORS, consulta la consola y la pestaña Red: la autorización depende del servidor remoto. Se mantienen las APIs solicitadas y se muestra el error, sin reemplazarlas ni inventar resultados. El endpoint de tipo de cambio utiliza HTTP y puede ser bloqueado como contenido mixto si Daily Planner se publica en HTTPS. Los tests continúan funcionando con mocks independientemente de esos problemas externos.

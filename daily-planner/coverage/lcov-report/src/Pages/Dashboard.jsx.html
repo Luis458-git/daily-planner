@@ -1,0 +1,109 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for src/Pages/Dashboard.jsx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/Pages</a> Dashboard.jsx</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">71.42% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>5/7</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">50% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>1/2</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">60% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>3/5</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>3/3</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line medium'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import RoutineList from '../Components/RoutineList'
+import DailySummary from '../Components/DailySummary'
+import TimerPanel from '../Components/TimerPanel'
+export default function Dashboard({ data, today, todaysActivities, timer, actions, navigate }) {
+  const done = todaysActivities.filter(a =&gt; a.completedDates.includes(today)).length
+  const percent = todaysActivities.length ? Math.round(done / todaysActivities.length * 100) : <span class="branch-1 cbranch-no" title="branch not covered" >0</span>
+  return &lt;&gt;&lt;div className="page-heading"&gt;&lt;div&gt;&lt;p className="eyebrow"&gt;TU ESPACIO PERSONAL&lt;/p&gt;&lt;h1&gt;Hola, un nuevo paso te espera &lt;span aria-hidden="true"&gt;☀&lt;/span&gt;&lt;/h1&gt;&lt;p&gt;Tu espacio. Tu ritmo. Organiza el día con intención.&lt;/p&gt;&lt;/div&gt;&lt;span className="quote"&gt;“Pequeños pasos, progreso constante.”&lt;/span&gt;&lt;/div&gt;&lt;DailySummary activities={todaysActivities} date={today} sessions={data.sessions} /&gt;&lt;div className="dashboard-grid"&gt;&lt;div&gt;&lt;section className="panel"&gt;&lt;div className="section-heading"&gt;&lt;h2&gt;▤ El plan de hoy&lt;/h2&gt;&lt;button className="primary" onClick={() =&gt; navigate('activities')}&gt;+ Añadir&lt;/button&gt;&lt;/div&gt;&lt;RoutineList activities={todaysActivities} date={today} {...actions} /&gt;&lt;/section&gt;&lt;section className="panel habit-panel"&gt;&lt;h2&gt;✧ Tu rutina semanal&lt;/h2&gt;&lt;p className="muted"&gt;Distribuye tus actividades y deja espacio para descansar.&lt;/p&gt;&lt;button onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >navigate('week')}</span>&gt;Ver la semana →&lt;/button&gt;&lt;/section&gt;&lt;/div&gt;&lt;div&gt;&lt;TimerPanel timer={timer} activities={data.activities} small /&gt;&lt;section className="panel"&gt;&lt;h2&gt;◔ Resumen de progreso&lt;/h2&gt;&lt;div className="progress-overview"&gt;&lt;div&gt;&lt;p&gt;{done} actividades completadas&lt;/p&gt;&lt;p className="muted"&gt;{todaysActivities.length - done} pendientes hoy&lt;/p&gt;&lt;/div&gt;&lt;strong className="percent"&gt;{percent}%&lt;/strong&gt;&lt;/div&gt;&lt;progress value={percent} max="100" aria-label="Progreso del día" /&gt;&lt;button className="text-button" onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >navigate('stats')}</span>&gt;Ver estadísticas →&lt;/button&gt;&lt;/section&gt;&lt;/div&gt;&lt;/div&gt;&lt;/&gt;
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-09-16T17:04:50.684Z
+            </div>
+        <script src="../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
+    </body>
+</html>
+    
